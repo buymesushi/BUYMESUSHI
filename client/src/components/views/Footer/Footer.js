@@ -6,6 +6,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Link from "react-router";
+import styled from "styled-components";
+
+const Git = styled(GitHubIcon)({
+  cursor: "pointer",
+});
 
 const Footer = () => {
   return (
@@ -38,7 +43,7 @@ const Footer = () => {
               <Instagram fontSize="large" />
               <TwitterIcon fontSize="large" />
               <FacebookIcon fontSize="large" />
-              <GitHubIcon
+              <Git
                 fontSize="large"
                 color="secondary"
                 onClick={() =>
