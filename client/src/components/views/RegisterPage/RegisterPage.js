@@ -96,7 +96,7 @@ const RegisterPage = (props) => {
     };
     // nickname validation
     const nicknamevalidation = () => {
-        let check = /[a-zA-Z0-9]/;
+        let check = /^[a-zA-Z0-9]{2,30}$/;
         if (Nickname === "") return true;
         return check.test(Nickname);
     };

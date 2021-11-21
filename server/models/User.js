@@ -48,7 +48,7 @@ const userSchema = mongoose.Schema({
         validate: {
             validator: function (v) {
                 return new Promise(function (resolve, reject) {
-                    resolve(/[a-zA-Z0-9]{2,30}/.test(v));
+                    resolve(/^[a-zA-Z0-9]{2,30}$/.test(v));
                 });
             },
             message: (props) => `${props.value} is not a valid name format!`,
