@@ -62,7 +62,6 @@ router.get("/", async (req, res) => {
                     .catch((err) => console.error.apply(err));
             }
             if (authBoards[i].dislikes.length >= 5) {
-                console.log("dislikes가 5보다 커요!");
                 await AuthBoard.updateOne(
                     { _id: authBoards[i]._id },
                     { wrongAuth: true }
@@ -111,7 +110,6 @@ router.put("/like", async (req, res) => {
         const findPost = await AuthBoard.findOne({
             _id: req.body.postId,
         }).populate("likes");
-        console.log(findPost.likes.length, "개의 likes가 있음");
 
         if (findPost.likes.length == 0) {
             await AuthBoard.updateOne(
@@ -153,14 +151,13 @@ router.put("/dislike", async (req, res) => {
         const findPost = await AuthBoard.findOne({
             _id: req.body.postId,
         }).populate("dislikes");
-        console.log(findPost.dislikes.length, "개의 dislikes가 있음");
 
         if (findPost.dislikes.length == 0) {
             await AuthBoard.updateOne(
                 { _id: findPost._id },
                 { $push: { dislikes: user._id } }
             )
-                .then(console.log("싫어요 등록 완료"))
+                .then(console.log("미흡 등록 완료"))
                 .catch((err) => console.error("등록 실패", err));
         } else {
             for (let i = 0; i < findPost.dislikes.length; i++) {
@@ -169,7 +166,7 @@ router.put("/dislike", async (req, res) => {
                         { _id: findPost._id },
                         { $pull: { dislikes: { $in: [user._id] } } }
                     )
-                        .then(console.log("싫어요 취소 완료"))
+                        .then(console.log("미흡 취소 완료"))
                         .cathch((err) => console.error(err));
                 }
             }
@@ -177,7 +174,7 @@ router.put("/dislike", async (req, res) => {
                 { _id: findPost._id },
                 { $push: { dislikes: user._id } }
             )
-                .then(console.log("싫어요 등록 완료"))
+                .then(console.log("미흡 등록 완료"))
                 .catch((err) => console.error("등록 실패", err));
         }
 
@@ -200,7 +197,7 @@ router.post("/comments", async (req, res) => {
                 },
             }
         )
-            .then(console.log("성공했나..?"))
+            .then(console.log("댓글 등록 완료"))
             .catch((err) => console.error(err));
 
         return res.redirect("/authBoard");

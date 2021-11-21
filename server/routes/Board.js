@@ -1,10 +1,8 @@
-const express = require('express');
-const Board = require('../models/Board');
-const User = require('../models/User');
-const multer = require('multer');
-const fs = require('fs');
-const { auth } = require('../middleware/auth');
-const mongoose = require('mongoose');
+const express = require("express");
+const Board = require("../models/Board");
+
+const fs = require("fs");
+const { auth } = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -15,12 +13,12 @@ router.use((req, res, next) => {
 });
 
 // 게시글 전체 데이터 가져와서 불러오기(Board)
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
     try {
-        const user = res.locals.user;
-        const Boards = await Board.find({}).populate('createdAt')
-            .populate('postedBy');
-        console.log(Boards);
+        const Boards = await Board.find({})
+            .populate("createdAt")
+            .populate("postedBy");
+
         res.json({ Boards });
     } catch (error) {
         console.log(error);
@@ -28,15 +26,13 @@ router.get('/', async (req, res) => {
 });
 
 // 누른 그 해당글 하나를 불러와야 함(BoardDetail)
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
-        const Boards = await Board.findOne({ _id: req.params.id }).populate('createdAt').populate('postedBy');
         // //렌더링 되기 전 조회수 1 추가
-        // const update = await Board.update(
-        //   {
-        //   viewcount : ++posts.viewcount,
-        // },
-        console.log({ Boards });
+        const Boards = await Board.findOne({ _id: req.params.id })
+            .populate("createdAt")
+            .populate("postedBy");
+
         res.status(200).json({ Boards });
     } catch (error) {
         console.error(error);
@@ -44,14 +40,14 @@ router.get('/:id', async (req, res) => {
     }
 });
 try {
-    fs.readdirSync('boarduploads');
+    fs.readdirSync("boarduploads");
 } catch (error) {
-    console.error('boarduploads 폴더가 없어 boarduploads 폴더를 생성합니다.');
-    fs.mkdirSync('boarduploads');
+    console.error("boarduploads 폴더가 없어 boarduploads 폴더를 생성합니다.");
+    fs.mkdirSync("boarduploads");
 }
 
 // 게시글값 업로드
-router.post('/write', async (req, res) => {
+router.post("/write", async (req, res) => {
     try {
         const identity = res.locals.user;
 
@@ -69,9 +65,7 @@ router.post('/write', async (req, res) => {
         return res.status(200).json({ findBoard });
     } catch (err) {
         console.error(err);
-        // next(err);
     }
 });
-
 
 module.exports = router;

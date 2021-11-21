@@ -80,7 +80,6 @@ const AuthBoardPost = () => {
         let formData = new FormData(form);
 
         axios.post("/api/authBoard/post", formData).then((response) => {
-            console.log(response.data);
             console.log("포스트 완료");
         });
     };

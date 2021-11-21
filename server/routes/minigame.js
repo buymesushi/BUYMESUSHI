@@ -13,7 +13,6 @@ router.use((req, res, next) => {
 router.put("/", async (req, res) => {
     try {
         const user = res.locals.user;
-        console.log("put 일어났어요");
 
         await User.updateOne(
             { _id: user._id },
