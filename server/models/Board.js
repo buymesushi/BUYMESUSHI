@@ -8,6 +8,8 @@ const BoardSchema = mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date },
 });
-
+BoardSchema.pre('save', function (next) {
+    const Board = this;
+});
 const Board = mongoose.model("Board", BoardSchema);
 module.exports = Board;
