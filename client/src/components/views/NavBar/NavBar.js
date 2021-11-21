@@ -5,11 +5,9 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@mui/material/Button";
 
 import "./NavBar.css";
-import { createTheme, Link, useScrollTrigger } from "@mui/material";
-import axios from "axios";
+import { Link, useScrollTrigger } from "@mui/material";
 import { withRouter } from "react-router";
 import RightMenu from "./Sections/RightMenu";
 import MiddleMenu from "./Sections/MiddleMenu";
@@ -46,15 +44,6 @@ ElevationScroll.propTypes = {
 };
 
 const NavBar = (props) => {
-    const onClickHandler = () => {
-        axios.get("/api/users/logout").then((response) => {
-            if (response.data.success) {
-                props.history.push("/login");
-            } else {
-                alert("로그아웃 하는데 실패 했습니다.");
-            }
-        });
-    };
     const classes = useStyles();
     return (
         <Box sx={{ flexGrow: 5 }}>
@@ -69,6 +58,7 @@ const NavBar = (props) => {
                                 <img
                                     className="navbar-logo"
                                     src="/img/usEarth.png"
+                                    alt="nada"
                                 />
                             </Link>
                         </div>

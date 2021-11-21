@@ -1,4 +1,3 @@
-// 메인 스크롤하면 2번째로 나오는 페이지
 // NewsApi
 import NewsItem from "./NewsItem";
 import React, { useEffect, useState } from "react";

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@mui/material/Button";
 
 import { withRouter } from "react-router";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const Navi = styled.div`
@@ -17,8 +16,6 @@ const NavButton = styled(Button)({
 });
 
 const RightMenu = (props) => {
-  const user = useSelector((state) => state.user);
-
   return (
     <Navi>
       <NavButton sx={{ mr: 1 }} href="/about" color="inherit">

@@ -1,7 +1,7 @@
 // npm install axios chart.js react-chartjs-2 --save 로 axios와 차트js 모듈2개까지 총 세개 모듈 설치
 
 import React, { useState, useEffect } from "react";
-import { Line, Doughnut } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -13,7 +13,6 @@ const Section = styled.div`
 
 const SeaTempApiModalItem = () => {
   const [gasData, setGaspData] = useState({});
-  const [emissionData, setEmissionpData] = useState({});
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -40,11 +39,6 @@ const SeaTempApiModalItem = () => {
         console.log(emissions[2015], '배출량');
         return acc;
       }, []);
-
-
-      // const country = arr.map((a) => `${a.code} 이라는 나라는`);
-      // const country = arr.code{KOR}
-      // const country = arr.find((a) => `${a.code}`);  => AFG 하나만 나오긴 함
 
       const emitquantity = arr.find((a) => a.code);
       console.log({ emitquantity });
@@ -75,7 +69,6 @@ const SeaTempApiModalItem = () => {
               height: "300px",
             }}
             data={gasData}
-            // data={emitquantity}
             options={
               ({
                 title: {

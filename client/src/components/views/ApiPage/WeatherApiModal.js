@@ -1,4 +1,3 @@
-// issue: 첫번째 모달은 주변이 불투명하게 되는데 두번째 꺼부터는 그냥 하얗게 보임.
 import React, { useState } from "react";
 import Modal from "react-modal";
 import styled from "styled-components";
@@ -27,10 +26,6 @@ const customStyles = {
   },
   overlay: {
     position: "fixed",
-    // top: "0",
-    // left: "0",
-    // right: "0",
-    // bottom: "0",
     backgroundColor: "rgba(118, 135, 163, 0.75)",
   },
 };

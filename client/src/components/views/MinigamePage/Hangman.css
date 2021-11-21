@@ -1,7 +1,3 @@
-/* * {
-  box-sizing: border-box;
-} */
-
 .hangman {
   background-color: #3b5998;
   color: #fff;
@@ -90,7 +86,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /* display: flex; */
   display: none;
   align-items: center;
   justify-content: center;

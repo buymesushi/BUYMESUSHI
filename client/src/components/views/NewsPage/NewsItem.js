@@ -1,7 +1,6 @@
 // 뉴스 기사 맵핑
 import React from "react";
 import styled from "styled-components";
-// import { CarouselWrapper } from "react-pretty-carousel";
 
 const Item = styled.div`
   position: relative;

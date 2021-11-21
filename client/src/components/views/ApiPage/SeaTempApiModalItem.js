@@ -1,5 +1,3 @@
-// npm install axios chart.js react-chartjs-2 --save 로 axios와 차트js 모듈2개까지 총 세개 모듈 설치
-
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
@@ -21,11 +19,9 @@ const SeaTempApiModalItem = () => {
       const res = await axios.get(
         "https://postman-open-technologies.github.io/environment/apis/global-surface-temperatures/"
       );
-      // console.log(res);
       makeData(res.data);
     };
     const makeData = (items) => {
-      // items.forEach(item=>console.log(item))
       // 매일이 아닌 달마다로 보여주기 위한 로직(이를 위해 reduce를 써준 것)
       const arr = items.reduce((acc, cur) => {
         const currentDate = new Date(cur.Date);
@@ -61,7 +57,6 @@ const SeaTempApiModalItem = () => {
       });
     };
     fetchEvents();
-    // ▼ 두번째 배열(dependency)을 빈값으로 보내줘야 계속 호출하지 않음. 만약 dependency 자리에 변수가 있다면 그 변수값이 변했을 때만 실행되는 것.
   }, []);
 
   return (

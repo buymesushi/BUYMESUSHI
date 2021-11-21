@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BoardError } from "../src/redux/constants/BoardError";
 import { formatFullDate } from "./services/date-format";
 import { errorHandler } from "./services/error-handler";
 
@@ -112,7 +111,7 @@ function Comment({ userId, articleId }) {
                 onClick={
                   data.depth === 0
                     ? () => toggleClickState(data.commentIndex)
-                    : () => {}
+                    : () => { }
                 }
               >
                 <div className="media-content">
