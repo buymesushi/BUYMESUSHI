@@ -16,9 +16,7 @@ const StyledTextArea = styled.textarea`
 function BoardWrite() {
   const [Title, setTitle] = useState("");
   const [Body, setBody] = useState("");
-  const [Img, setImg] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [fileUrl, setFileUrl] = useState(null);
 
   const onTitleHandler = (event) => {
     setTitle(event.currentTarget.value);

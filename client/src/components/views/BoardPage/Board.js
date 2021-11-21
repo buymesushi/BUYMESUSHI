@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import "./Board.css";
 import axios from "axios";
 import Button from "@mui/material/Button";
@@ -35,11 +34,6 @@ const Container = styled.div`
   float: left;
 `;
 // styled component 3
-const BoardButton = styled(Button)({
-  backgroundColor: "#3b5998",
-  left: "79.3vw",
-});
-// styled component 4
 const BoardWriteButton = styled(Button)({
   backgroundColor: "#3b5998",
   left: "79.3vw",
@@ -84,7 +78,6 @@ function Board() {
 
     },
   ]);
-  const user = useSelector((state) => state.user.userData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -156,7 +149,6 @@ function Board() {
                             });
                             await setModalIsOpen(true);
                           }}
-                          id="rowData._id"
                           href="{() => false}"
                         >
                           {rowData.title}

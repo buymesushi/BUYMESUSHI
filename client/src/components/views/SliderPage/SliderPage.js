@@ -11,7 +11,7 @@ import {
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { sliderItems } from "../../../data";
-import { useSpring, animated, config } from "react-spring";
+import { useSpring, config } from "react-spring";
 
 const Container = styled.div`
   width: 100%;
