@@ -24,7 +24,10 @@ const HomeScreen = () => {
         return (
             <div className="homescreen">
                 <div className="homescreen-myinfo-container">
-                    <div className="homscreen-myinfo">
+                    <div
+                        className="homscreen-myinfo"
+                        style={{ marginTop: "100px" }}
+                    >
                         <div className="homescreen-nickname">
                             {user.nickname}님의 현재 포인트 :
                         </div>
