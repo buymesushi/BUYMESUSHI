@@ -15,7 +15,7 @@ const HomeScreen = () => {
     }, [dispatch]);
     console.log(user);
 
-    if (user) {
+    if (user && products) {
         return (
             <div className="homescreen">
                 <div className="homescreen-myinfo-container">
