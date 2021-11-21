@@ -15,7 +15,7 @@ const HomeScreen = () => {
     }, [dispatch]);
     console.log(user);
 
-    if (user) {
+    if (user && products) {
         return (
             <div className="homescreen">
                 <div className="homescreen-myinfo-container">
@@ -31,27 +31,21 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="homescreen_products">
-                    {loading ? (
-                        <h2>로딩중...</h2>
-                    ) : error ? (
-                        <h2>{error}</h2>
-                    ) : (
-                        products.map((product) => (
-                            <Product
-                                key={product._id}
-                                productId={product._id}
-                                name={product.name}
-                                price={product.price}
-                                description={product.description}
-                                imageUrl={product.imageUrl}
-                            />
-                        ))
-                    )}
+                    {products.map((product) => (
+                        <Product
+                            key={product._id}
+                            productId={product._id}
+                            name={product.name}
+                            price={product.price}
+                            description={product.description}
+                            imageUrl={product.imageUrl}
+                        />
+                    ))}
                 </div>
             </div>
         );
     } else {
-        return null;
+        return <div style={{ height: "900px" }}></div>;
     }
 };
 
