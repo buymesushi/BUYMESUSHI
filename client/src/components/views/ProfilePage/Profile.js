@@ -17,11 +17,11 @@ const Profile = () => {
             compliteAuth: "",
             wrongAuth: "",
             comments: [],
-            userImage: "",
         },
     ]);
     const [PostStates, setPostStates] = useState({});
     const [lastIdx, setLastIdx] = useState(0);
+    const [userImage, setUserImage] = useState("");
 
     useEffect(() => {
         const fetchData = async (e) => {
@@ -36,12 +36,12 @@ const Profile = () => {
                             compliteAuth: rowData.compliteAuth,
                             wrongAuth: rowData.wrongAuth,
                             comments: rowData.comments,
-                            userImage: rowData.postedBy.profileImage,
                         }
                     )
                 );
                 // console.log(res.data.postsState, "포스트 스테이트");
                 setPostStates(res.data.postsState);
+                setUserImage(res.data.profileImage);
                 return setData(Data.concat(_Data));
             } catch (error) {
                 console.error(error);
@@ -56,6 +56,7 @@ const Profile = () => {
                 photoData={Data}
                 userData={urlParam.id}
                 postState={PostStates}
+                userImage={userImage}
             />
             <ProfileBody photoData={Data} />
         </div>

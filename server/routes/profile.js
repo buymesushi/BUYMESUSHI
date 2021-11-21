@@ -36,8 +36,10 @@ router.get("/:id", async (req, res) => {
         }
 
         const postsState = { waits, completes, wrongs };
+        const userImage = await User.findOne({ nickname: userNick });
+        const profileImage = userImage.profileImage;
 
-        return res.status(200).json({ userPosts, postsState });
+        return res.status(200).json({ userPosts, postsState, profileImage });
     } catch (err) {
         console.error(err);
     }
