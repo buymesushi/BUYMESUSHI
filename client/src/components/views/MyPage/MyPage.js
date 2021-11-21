@@ -1,26 +1,17 @@
-//cart
 import "./MyPage.css";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router";
 
-//
-
-//컴포넌트
 import CartItem from "../ShoppingPage/ShopComponents/CartItem";
-//액션
+
 import { addToCart, removeFromCart } from "../../../actions/cartAction";
 import axios from "axios";
 
-//////////////////
-//현석
 import MyPageAuth from "./Sections/MyPageAuth";
-////////////////
 
 const MyPage = (props) => {
-    //   console.log("로컬 ", localStorage.getItem("cart"));
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
@@ -33,7 +24,6 @@ const MyPage = (props) => {
         userImage: "",
         points: 0,
     });
-    //const [userData2, setUserData2] = useState({ points: 0 });
 
     useEffect(() => {
         const fetchData = async (e) => {
@@ -93,7 +83,7 @@ const MyPage = (props) => {
     const paymentBtn = (price) => {
         axios
             .put("/api/mypage/payment", { payPrice: price })
-            // .then((res) => res.json())
+
             .then(alert("결제가 완료되었습니다."))
             .catch((err) => {
                 console.log(err);
@@ -113,14 +103,11 @@ const MyPage = (props) => {
     return (
         <div className="MyPage">
             <div className="AuthBoard">
-                {/* /////////////////////////////// */}
-                {/* 현석 */}
                 <MyPageAuth
                     photoData={Data}
                     postState={PostStates}
                     userData={userData1}
                 />
-                {/* /////////////////////////////// */}
             </div>
             <div className="cartscreen">
                 <div className="cartscreen_left">
@@ -168,7 +155,6 @@ const MyPage = (props) => {
                                 </span>
                                 ) 상품
                             </p>
-                            {/* <p>결제예정금액 ${getCartSubTotasl().toFixed(2)}</p> */}
                         </div>
                         <div>
                             {getCartSubTotasl() <= userData1.points ? (

@@ -51,10 +51,8 @@ const MyPageUserModal = (props) => {
 
         let form = document.getElementById("MyPageUserModal_imgForm");
         let formData = new FormData(form);
-        console.log(formData.profilePhoto);
 
         axios.put("/api/mypage/userImage", formData).then((response) => {
-            console.log(response.data);
             console.log("포스트 완료");
         });
     };

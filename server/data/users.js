@@ -41,27 +41,12 @@ genSalt(password)
     })
     .then((result) => {
         stored_hash = result.hash;
-        //console.log(stored_hash);
+
         return stored_hash;
     })
-    .then((val) => {
-        //console.log(`내가 출력하고 싶엉!! ${val}`);
-    })
-
     .catch(function (err) {
         console.log(err);
     });
-
-// const promise = getPassword();
-// const getData = () => {
-//     promise.then((appData) => {
-//         console.log(appData);
-//     });
-// };
-// getData();
-////////////
-//////////////////
-///////////////////
 
 const users = [
     {
