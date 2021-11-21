@@ -31,10 +31,16 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const Boards = await Board.findOne({ _id: req.params.id }).populate('createdAt').populate('postedBy');
+        // //렌더링 되기 전 조회수 1 추가
+        // const update = await Board.update(
+        //   {
+        //   viewcount : ++posts.viewcount,
+        // },
         console.log({ Boards });
         res.status(200).json({ Boards });
     } catch (error) {
         console.error(error);
+        // next(error);
     }
 });
 try {
@@ -63,6 +69,7 @@ router.post('/write', async (req, res) => {
         return res.status(200).json({ findBoard });
     } catch (err) {
         console.error(err);
+        // next(err);
     }
 });
 

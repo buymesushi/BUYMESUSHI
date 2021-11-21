@@ -7,6 +7,7 @@ body *:after {
 }
 
 body .wrapper {
+  /* width: 90vw; */
   margin: 0 auto;
   max-width: 100%;
   padding: 0 15px;
@@ -19,6 +20,7 @@ body .clearfix:after {
 }
 .board {
   margin-bottom: 30px;
+  /* margin-left: 100px; */
 }
 
 .board .header {

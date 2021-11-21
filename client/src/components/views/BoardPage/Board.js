@@ -45,7 +45,7 @@ const BoardWriteButton = styled(Button)({
   backgroundColor: "#3b5998",
   left: "79.3vw",
 });
-// styled component 5
+//
 const customStyles2 = {
   content: {
     width: "80vw",
@@ -158,7 +158,7 @@ function Board() {
                             });
                             await setModalIsOpen(true);
                           }}
-                          href="{() => false}"
+                          id="rowData._id"
                         >
                           {rowData.title}
                         </a>
