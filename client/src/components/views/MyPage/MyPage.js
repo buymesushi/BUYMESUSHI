@@ -100,108 +100,117 @@ const MyPage = (props) => {
         alert("현재 포인트를 초과하였습니다!");
     };
 
-    return (
-        <div className="MyPage">
-            <div className="AuthBoard">
-                <MyPageAuth
-                    photoData={Data}
-                    postState={PostStates}
-                    userData={userData1}
-                />
-            </div>
-            <div className="cartscreen">
-                <div className="cartscreen_left">
-                    <div className="cartscreen_right">
-                        <div className="cartscreen_info">
-                            <div>
+    if (Data) {
+        return (
+            <div className="MyPage">
+                <div className="AuthBoard">
+                    <MyPageAuth
+                        photoData={Data}
+                        postState={PostStates}
+                        userData={userData1}
+                    />
+                </div>
+                <div className="cartscreen">
+                    <div className="cartscreen_left">
+                        <div className="cartscreen_right">
+                            <div className="cartscreen_info">
                                 <div>
-                                    <div
-                                        className="MyPage-cartscreen-subtitle"
-                                        style={{ borderBottomWidth: "0px" }}
-                                    >
-                                        현재 포인트{" "}
-                                    </div>{" "}
-                                    : <h2> {userData1.points}</h2>
+                                    <div>
+                                        <div
+                                            className="MyPage-cartscreen-subtitle"
+                                            style={{ borderBottomWidth: "0px" }}
+                                        >
+                                            현재 포인트{" "}
+                                        </div>{" "}
+                                        : <h2> {userData1.points}</h2>
+                                    </div>
+                                    <div>
+                                        <div
+                                            className="MyPage-cartscreen-subtitle"
+                                            style={{ borderBottomWidth: "0px" }}
+                                        >
+                                            결제 예정 금액{" "}
+                                        </div>{" "}
+                                        : <h2>{getCartSubTotasl()}</h2>
+                                    </div>
+                                    <div>
+                                        <div
+                                            className="MyPage-cartscreen-subtitle"
+                                            style={{ borderBottomWidth: "0px" }}
+                                        >
+                                            남은 포인트{" "}
+                                        </div>{" "}
+                                        :{" "}
+                                        {getCartSubTotasl() >
+                                        userData1.points ? (
+                                            <h2>포인트 부족</h2>
+                                        ) : (
+                                            <h2>
+                                                {userData1.points - myPoint()}
+                                            </h2>
+                                        )}
+                                    </div>
                                 </div>
-                                <div>
-                                    <div
-                                        className="MyPage-cartscreen-subtitle"
-                                        style={{ borderBottomWidth: "0px" }}
-                                    >
-                                        결제 예정 금액{" "}
-                                    </div>{" "}
-                                    : <h2>{getCartSubTotasl()}</h2>
-                                </div>
-                                <div>
-                                    <div
-                                        className="MyPage-cartscreen-subtitle"
-                                        style={{ borderBottomWidth: "0px" }}
-                                    >
-                                        남은 포인트{" "}
-                                    </div>{" "}
-                                    :{" "}
-                                    {getCartSubTotasl() > userData1.points ? (
-                                        <h2>포인트 부족</h2>
-                                    ) : (
-                                        <h2>{userData1.points - myPoint()}</h2>
-                                    )}
-                                </div>
-                            </div>
 
-                            <p>
-                                총 (
-                                <span className="MyPage-cartItemQty">
-                                    {getCartCount()}
-                                </span>
-                                ) 상품
-                            </p>
-                        </div>
-                        <div>
-                            {getCartSubTotasl() <= userData1.points ? (
-                                cartItems.length === 0 ? (
-                                    <button onClick={emptyProduct}>
-                                        결제하기
-                                    </button>
+                                <p>
+                                    총 (
+                                    <span className="MyPage-cartItemQty">
+                                        {getCartCount()}
+                                    </span>
+                                    ) 상품
+                                </p>
+                            </div>
+                            <div>
+                                {getCartSubTotasl() <= userData1.points ? (
+                                    cartItems.length === 0 ? (
+                                        <button onClick={emptyProduct}>
+                                            결제하기
+                                        </button>
+                                    ) : (
+                                        <button
+                                            onClick={() => {
+                                                paymentBtn(myPoint());
+                                            }}
+                                        >
+                                            결제하기
+                                        </button>
+                                    )
                                 ) : (
-                                    <button
-                                        onClick={() => {
-                                            paymentBtn(myPoint());
-                                        }}
-                                    >
+                                    <button onClick={exceedPoint}>
                                         결제하기
                                     </button>
-                                )
-                            ) : (
-                                <button onClick={exceedPoint}>결제하기</button>
-                            )}
+                                )}
+                            </div>
                         </div>
+                        <h2 style={{ marginTop: "5vh" }}>장바구니</h2>
+                        {cartItems.length === 0 ? (
+                            <div>
+                                장바구니가 비었습니다{" "}
+                                <Link
+                                    to="/product"
+                                    className="GotoShop"
+                                    style={{ fontWeight: "600" }}
+                                >
+                                    쇼핑하러 가기
+                                </Link>
+                            </div>
+                        ) : (
+                            cartItems.map((item) => (
+                                <CartItem
+                                    key={item.product}
+                                    item={item}
+                                    qtyChangeHandler={qtyChangeHandler}
+                                    removeHandler={removeHandler}
+                                />
+                            ))
+                        )}
                     </div>
-                    <h2 style={{ marginTop: "5vh" }}>장바구니</h2>
-                    {cartItems.length === 0 ? (
-                        <div>
-                            장바구니가 비었습니다{" "}
-                            <Link
-                                to="/product"
-                                className="GotoShop"
-                                style={{ fontWeight: "600" }}
-                            >
-                                쇼핑하러 가기
-                            </Link>
-                        </div>
-                    ) : (
-                        cartItems.map((item) => (
-                            <CartItem
-                                key={item.product}
-                                item={item}
-                                qtyChangeHandler={qtyChangeHandler}
-                                removeHandler={removeHandler}
-                            />
-                        ))
-                    )}
                 </div>
             </div>
-        </div>
-    );
+        );
+    } else {
+        return null;
+    }
 };
 
 export default MyPage;
