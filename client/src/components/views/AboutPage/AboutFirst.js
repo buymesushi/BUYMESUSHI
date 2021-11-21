@@ -47,7 +47,7 @@ export default function About() {
         <Collapse
           in={checked}
           {...(checked ? { timeout: 1000 } : {})}
-          collapsedHeight={50}
+          collapsedHeight={45}
         >
           <div className={classes.container}>
             <h1 className={classes.title}>
