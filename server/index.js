@@ -22,12 +22,12 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-const importDate = require("./routes/seederScript");
+// const importDate = require("./routes/seederScript");
 
 const connectAndImport = async () => {
     try {
         await connectDB();
-        await importDate();
+        // await importDate();
     } catch (err) {
         console.log(err);
     }
