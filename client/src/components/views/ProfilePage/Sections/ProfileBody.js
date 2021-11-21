@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
 
 const ProfileBody = (props) => {
     return (
@@ -6,7 +6,7 @@ const ProfileBody = (props) => {
             <div className="Profile-body-subtitle">대기중인 인증 게시글</div>
             <div className="Profile-body-photos">
                 {props.photoData
-                    .filter((data) => data.photo !== '')
+                    .filter((data) => data.photo !== "")
                     .filter((data) => data.compliteAuth == false)
                     .filter((data) => data.wrongAuth == false)
                     .map((rowData, index) => (
@@ -18,7 +18,7 @@ const ProfileBody = (props) => {
             <div className="Profile-body-subtitle">인증 완료 게시글</div>
             <div className="Profile-body-photos">
                 {props.photoData
-                    .filter((data) => data.photo !== '')
+                    .filter((data) => data.photo !== "")
                     .filter((data) => data.compliteAuth == true)
                     .filter((data) => data.wrongAuth == false)
                     .map((rowData, index) => (
@@ -30,7 +30,7 @@ const ProfileBody = (props) => {
             <div className="Profile-body-subtitle">인증 거절 게시글</div>
             <div className="Profile-body-photos">
                 {props.photoData
-                    .filter((data) => data.photo !== '')
+                    .filter((data) => data.photo !== "")
                     .filter((data) => data.compliteAuth == false)
                     .filter((data) => data.wrongAuth == true)
                     .map((rowData, index) => (

@@ -39,10 +39,6 @@ const upload = multer({
 
 router.get("/", async (req, res) => {
     try {
-        //console.log(req.cookies);
-        const user = res.locals.user;
-
-        // console.log(user);
         const authBoards = await AuthBoard.find({ compliteAuth: false })
             .find({ wrongAuth: false })
             .populate("postedBy")
@@ -75,7 +71,7 @@ router.get("/", async (req, res) => {
                     .catch((err) => console.error.apply(err));
             }
         }
-        // console.log(authBoards);
+
         const resultAuthBoards = await AuthBoard.find({ compliteAuth: false })
             .find({ wrongAuth: false })
             .sort([["createdAt", -1]])
@@ -83,7 +79,6 @@ router.get("/", async (req, res) => {
             .populate("likes")
             .populate("comments.postedBy");
 
-        //console.log(resultAuthBoards[0].comments[0].text);
         return res.json({ resultAuthBoards });
     } catch (error) {
         console.log(error);
@@ -92,15 +87,7 @@ router.get("/", async (req, res) => {
 
 router.post("/post", upload.single("authBoardPhoto"), async (req, res) => {
     try {
-        // 아래 : Object: null prototype 삭제
-        // const obj = JSON.parse(JSON.stringify(req.body));
-        // console.log(obj);
-
-        const user = res.locals.user;
         const authBoardBody = req.body.authBody;
-        //         console.log(user);
-        // console.log(req.file, req.body);
-        // console.log(authBoardBody);
 
         const insertMongo = {
             authBody: authBoardBody,
@@ -109,12 +96,7 @@ router.post("/post", upload.single("authBoardPhoto"), async (req, res) => {
         };
 
         await AuthBoard.insertMany(insertMongo);
-        // .then(() => {
-        //     return res.status(200).json({ postAuthBoard: true });
-        // })
-        // .catch((err) => {
-        //     return res.json({ postAuthBoard: false });
-        // });
+
         const findAuthBoard = await AuthBoard.find({});
 
         return res.status(200).json({ findAuthBoard });

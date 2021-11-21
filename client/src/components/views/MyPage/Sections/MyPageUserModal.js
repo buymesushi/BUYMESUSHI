@@ -26,17 +26,9 @@ const customStyles = {
     },
     overlay: {
         position: "fixed",
-        // top: "0",
-        // left: "0",
-        // right: "0",
-        // bottom: "0",
         backgroundColor: "rgba(118, 135, 163, 0.75)",
     },
 };
-
-const ApiButton = styled(Button)({
-    backgroundColor: "#3b5998",
-});
 
 const MyPageUserModal = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
