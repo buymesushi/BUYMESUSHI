@@ -7,7 +7,6 @@ const authBoardschema = new mongoose.Schema({
     },
     photo: {
         type: String,
-        //required: true,
     },
     likes: [{ type: ObjectId, ref: "User" }],
     dislikes: [{ type: ObjectId, ref: "User" }],
@@ -34,10 +33,6 @@ const authBoardschema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-});
-
-authBoardschema.pre("save", function (next) {
-    const authBoard = this;
 });
 
 const AuthBoard = mongoose.model("AuthBoard", authBoardschema);

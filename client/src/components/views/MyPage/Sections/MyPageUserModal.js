@@ -26,17 +26,9 @@ const customStyles = {
     },
     overlay: {
         position: "fixed",
-        // top: "0",
-        // left: "0",
-        // right: "0",
-        // bottom: "0",
         backgroundColor: "rgba(118, 135, 163, 0.75)",
     },
 };
-
-const ApiButton = styled(Button)({
-    backgroundColor: "#3b5998",
-});
 
 const MyPageUserModal = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -52,17 +44,15 @@ const MyPageUserModal = (props) => {
     };
 
     const onSubmitHandler = (event) => {
-        if (Photo == "") {
+        if (Photo === "") {
             event.preventDefault();
             return alert("사진을 업로드 해주세요!");
         }
 
         let form = document.getElementById("MyPageUserModal_imgForm");
         let formData = new FormData(form);
-        console.log(formData.profilePhoto);
 
         axios.put("/api/mypage/userImage", formData).then((response) => {
-            console.log(response.data);
             console.log("포스트 완료");
         });
     };
@@ -73,6 +63,7 @@ const MyPageUserModal = (props) => {
                 className="Profile-img"
                 src={props.userImage}
                 onClick={() => setModalIsOpen(true)}
+                alt="profile-img"
             />
             <Modal
                 isOpen={modalIsOpen}

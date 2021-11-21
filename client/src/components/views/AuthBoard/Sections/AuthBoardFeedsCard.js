@@ -62,7 +62,6 @@ export default function AuthBoardFeedsCard() {
             .put("/api/authBoard/like", {
                 postId: id,
             })
-            // .then((res) => res.json())
             .then((result) => {})
             .catch((err) => {
                 console.log(err);
@@ -73,7 +72,6 @@ export default function AuthBoardFeedsCard() {
             .put("/api/authBoard/dislike", {
                 postId: id,
             })
-            // .then((res) => res.json())
             .then((result) => {})
             .catch((err) => {
                 console.log(err);
@@ -102,6 +100,7 @@ export default function AuthBoardFeedsCard() {
                                                     width: "40px",
                                                     height: "40px",
                                                 }}
+                                                alt="프로필 이미지"
                                             />
                                         </Avatar>
                                     }

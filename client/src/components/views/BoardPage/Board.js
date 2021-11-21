@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import "./Board.css";
 import axios from "axios";
 import Button from "@mui/material/Button";
@@ -23,7 +22,7 @@ const customStyles = {
   },
   overlay: {
     position: "fixed",
-    backgroundColor: "rgba(118, 135, 163, 0.2)",
+    backgroundColor: "rgba(118, 135, 163, 0.6)",
   },
 };
 // styled component 2
@@ -35,16 +34,11 @@ const Container = styled.div`
   float: left;
 `;
 // styled component 3
-const BoardButton = styled(Button)({
-  backgroundColor: "#3b5998",
-  left: "79.3vw",
-});
-// styled component 4
 const BoardWriteButton = styled(Button)({
   backgroundColor: "#3b5998",
   left: "79.3vw",
 });
-//
+//styled component 5
 const customStyles2 = {
   content: {
     width: "80vw",
@@ -58,7 +52,7 @@ const customStyles2 = {
   },
   overlay: {
     position: "fixed",
-    backgroundColor: "rgba(118, 135, 163, 0.4)",
+    backgroundColor: "rgba(118, 135, 163, 0.6)",
   },
 };
 
@@ -84,8 +78,6 @@ function Board() {
 
     },
   ]);
-  const user = useSelector((state) => state.user.userData);
-  const [viewCount, setViewCount] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -117,7 +109,7 @@ function Board() {
 
 
   return (
-    <div className="board">
+    <div className="board" style={{ marginLeft: "100px" }}>
       <br />
       <div className="header">
         <div className="wrapper">
@@ -157,7 +149,7 @@ function Board() {
                             });
                             await setModalIsOpen(true);
                           }}
-                          id="rowData._id"
+                          href="{() => false}"
                         >
                           {rowData.title}
                         </a>

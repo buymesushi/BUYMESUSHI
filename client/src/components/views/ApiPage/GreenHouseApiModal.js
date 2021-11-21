@@ -31,10 +31,6 @@ const customStyles = {
     },
     overlay: {
         position: "fixed",
-        // top: "0",
-        // left: "0",
-        // right: "0",
-        // bottom: "0",
         backgroundColor: "rgba(118, 135, 163, 0.75)",
     },
 };
@@ -48,7 +44,7 @@ export default function SeaTempApiModal(className, visible, children) {
                 size="large"
                 onClick={() => setModalIsOpen(true)}
             >
-                한국 온실가스 배출 변화
+                온실가스 배출량 변화
             </ApiButton>
             <Modal
                 style={customStyles}

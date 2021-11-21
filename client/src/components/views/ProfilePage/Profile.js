@@ -4,11 +4,9 @@ import ProfileHead from "./Sections/ProfileHead";
 import "./Profile.css";
 
 import axios from "axios";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const Profile = () => {
-    const user = useSelector((state) => state.user.userData);
     let urlParam = useParams();
 
     const [Data, setData] = useState([
@@ -39,7 +37,7 @@ const Profile = () => {
                         }
                     )
                 );
-                // console.log(res.data.postsState, "포스트 스테이트");
+
                 setPostStates(res.data.postsState);
                 setUserImage(res.data.profileImage);
                 return setData(Data.concat(_Data));

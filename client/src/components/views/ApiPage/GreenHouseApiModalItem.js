@@ -1,7 +1,7 @@
 // npm install axios chart.js react-chartjs-2 --save 로 axios와 차트js 모듈2개까지 총 세개 모듈 설치
 
 import React, { useState, useEffect } from "react";
-import { Line, Doughnut } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -12,13 +12,12 @@ const Section = styled.div`
 `;
 
 const SeaTempApiModalItem = () => {
-  const [tempData, setTempData] = useState({});
+  const [gasData, setGaspData] = useState({});
 
-  // useEffect를 쓴 이유 : fetch함수를 통해 API를 계속 불러오는 것을 방지하여 속도 향상, useState 값이 변경되면 업데이트 해주기 위해.
   useEffect(() => {
     const fetchEvents = async () => {
       const res = await axios.get(
-        "https://postman-open-technologies.github.io/environment/apis/green-house-gases/emissions-per-country/?code=KOR"
+        "https://postman-open-technologies.github.io/environment/apis/green-house-gases/emissions-per-country"
       );
       makeData(res.data);
     };
@@ -28,7 +27,7 @@ const SeaTempApiModalItem = () => {
         const year = currentDate.getFullYear();
         const code = cur.code;
         const emissions = cur.emissions;
-        const findItem = acc.find((a) => a.year === year);
+        const findItem = acc.find((a) => a.code === code);
         if (!findItem) {
           acc.push({
             year,
@@ -36,20 +35,22 @@ const SeaTempApiModalItem = () => {
             code,
           });
         }
-        console.log(year);
+        console.log(code, '나라');
+        console.log(emissions[2015], '배출량');
         return acc;
       }, []);
-      console.log(arr);
 
-      const labels = arr?.map((a) => `${a.code}`);
-      setTempData({
-        labels,
+      const emitquantity = arr.find((a) => a.code);
+      console.log({ emitquantity });
+
+      setGaspData({
+        emitquantity,
         datasets: [
           {
-            label: "나라별 온실가스 배출량",
+            label: "온실가스 배출량 변화",
             borderColor: "skyblue",
             fill: false,
-            data: arr?.map((a) => a.emissions),
+            data: emitquantity.emissions
           },
         ],
       });
@@ -59,26 +60,25 @@ const SeaTempApiModalItem = () => {
 
   return (
     <Section>
-      <h2>한국 온실가스 배출량</h2>
+      <h2>온실가스 배출량 변화</h2>
       <div className="contents" style={{ width: "700px" }}>
         <div style={{ width: "700px" }}>
-          <Doughnut
+          <Line
             style={{
               width: "700px",
               height: "300px",
             }}
-            data={tempData}
+            data={gasData}
             options={
               ({
                 title: {
                   display: true,
-                  text: "나라별 온실가스 배출량 비교",
+                  text: "온실가스 배출량 변화",
                   fontSize: 16,
                 },
               },
                 { legend: { display: true, position: "bottom" } })
             }
-            style={{ size: "60px" }}
           />
         </div>
       </div>

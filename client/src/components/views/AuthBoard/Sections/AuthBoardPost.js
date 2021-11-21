@@ -11,15 +11,11 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import CloseIcon from "@mui/icons-material/Close";
-import { borderRadius } from "@mui/system";
-import { red } from "@mui/material/colors";
 
 const customStyles = {
     content: {
         width: "600px",
-        // height: "600px",
         height: "75vh",
-
         top: "50%",
         left: "50%",
         right: "auto",
@@ -30,10 +26,6 @@ const customStyles = {
     },
     overlay: {
         position: "fixed",
-        // top: "0",
-        // left: "0",
-        // right: "0",
-        // bottom: "0",
         backgroundColor: "rgba(118, 135, 163, 0.75)",
     },
 };
@@ -61,9 +53,7 @@ const AuthBoardPost = () => {
     const [Photo, setPhoto] = useState("");
     const [fileUrl, setFileUrl] = useState(null);
 
-    //
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    // const [modal, setModal] = useState("");
 
     const onBodyHandler = (event) => {
         setBody(event.currentTarget.value);
@@ -77,15 +67,11 @@ const AuthBoardPost = () => {
         setPhoto(event.currentTarget.value);
     };
 
-    // const setBodyClear = () => {
-    //     setBody("");
-    // };
-
     const onSubmitHandler = (event) => {
-        if (Body == "") {
+        if (Body === "") {
             event.preventDefault();
             return alert("본문을 입력해 주세요!");
-        } else if (Photo == "") {
+        } else if (Photo === "") {
             event.preventDefault();
             return alert("사진을 업로드 해주세요!");
         }
@@ -94,17 +80,11 @@ const AuthBoardPost = () => {
         let formData = new FormData(form);
 
         axios.post("/api/authBoard/post", formData).then((response) => {
-            console.log(response.data);
             console.log("포스트 완료");
         });
     };
 
-    // const Input = styled("input")({
-    //     display: "none",
-    // });
-
     return (
-        //모달 시도
         <div className="M_body">
             <div className="MyButton_css">
                 <MyButton onClick={() => setModalIsOpen(true)}>

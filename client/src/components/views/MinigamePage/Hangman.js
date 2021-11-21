@@ -5,7 +5,7 @@ import WrongLetters from "./WrongLetters";
 import Word from "./Word";
 import Popup from "./Popup";
 import Notification from "./Notification";
-import { showNotification as show, checkWin } from "./helpers/helpers";
+import { showNotification as show } from "./helpers/helpers";
 
 import "../MinigamePage/Hangman.css";
 

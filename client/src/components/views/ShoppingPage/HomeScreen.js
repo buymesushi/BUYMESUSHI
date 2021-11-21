@@ -1,11 +1,7 @@
 import "./HomeScreen.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-// import React from "react";
-//Components
 import Product from "./ShopComponents/Product";
-//Actions
 import { getProducts as listProducts } from "../../../actions/productActions";
 import { useState } from "react";
 
@@ -18,7 +14,6 @@ const HomeScreen = () => {
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch]);
-    console.log(user);
 
     if (user) {
         return (

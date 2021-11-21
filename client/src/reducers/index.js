@@ -9,9 +9,6 @@ import {
   getProductDetailsReducer,
   getProductsReducer,
 } from "./productReducers";
-//action은 어디서 해?
-
-// import productShop from
 
 const rootReducer = combineReducers({
   user,

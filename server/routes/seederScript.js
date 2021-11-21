@@ -15,7 +15,7 @@ const importDate = async () => {
         const a = await User.find({});
         const b = a[1]._id;
         const c = a[2]._id;
-        // console.log(b);
+
         const authBoards = [
             {
                 authBody: "최씨가 올림",

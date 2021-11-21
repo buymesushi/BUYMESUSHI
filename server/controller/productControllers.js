@@ -2,12 +2,9 @@ const Product = require("../models/Product");
 
 const getAllProducts = async (req, res) => {
     try {
-        //원래있음
         const user = res.locals.user;
 
         const products = await Product.find({});
-
-        // const products = await Product.find({}).populate("user");
 
         res.json({ products, user });
     } catch (error) {

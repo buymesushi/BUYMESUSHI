@@ -1,23 +1,14 @@
 import React from "react";
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
-//
-
-//Actions
-// import { getProductDetails } from "../../../actions/productActions";
 import { getProductDetails } from "../../../actions/productActions";
 import { addToCart } from "../../../actions/cartAction";
 
 const ProductScreen = ({ match, history }) => {
-    // const params = useParams();
-
     const [qty, setQty] = useState(1);
     const dispatch = useDispatch();
-
-    //product로 하면 오류나 왤까
     const productDetails = useSelector((state) => state.getProductDetails);
     const { loading, error, product } = productDetails;
 
@@ -26,13 +17,10 @@ const ProductScreen = ({ match, history }) => {
             dispatch(getProductDetails(match.params.id));
         }
     }, [dispatch, match, product]);
-
-    //유저값도 같이 보내면 되나 해서 해본거
     const user = useSelector((state) => state.user);
     console.log(user);
 
     const addToCartHandler = () => {
-        // dispatch(addToCart(product._id, qty, user.userData._id));
         dispatch(addToCart(product._id, qty));
         history.push(`/mypage`);
     };

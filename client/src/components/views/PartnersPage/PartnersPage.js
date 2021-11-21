@@ -1,7 +1,6 @@
-import React, { Children } from "react";
+import React from "react";
 import styled from "styled-components";
 import { PartnersItem, Partners } from "../../../data";
-// import { useSpring, animated, config } from "react-spring";
 
 const Box = styled.div`
   box-sizing: border-box;
@@ -40,7 +39,6 @@ const Partner = styled.div`
   --border-radius: 0.7rem;
   width: 135px;
   height: 50px;
-  /* position: absolute; */
   border: 2px solid transparent;
   backdrop-filter: blur(1px);
   cursor: pointer;
@@ -50,8 +48,6 @@ const Partner = styled.div`
   border-radius: var(--border-radius);
   background-clip: border-box;
   background: #c7d2fe66;
-  /* transition: 0.7s; */
-  /* background: linear-gradient(0deg, #1e1f2a 0%, #2f313d 67%); */
   @media only screen and (max-width: 99vw) {
     width: 50px;
     height: 20px;

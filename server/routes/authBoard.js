@@ -39,10 +39,6 @@ const upload = multer({
 
 router.get("/", async (req, res) => {
     try {
-        //console.log(req.cookies);
-        const user = res.locals.user;
-
-        // console.log(user);
         const authBoards = await AuthBoard.find({ compliteAuth: false })
             .find({ wrongAuth: false })
             .populate("postedBy")
@@ -66,7 +62,6 @@ router.get("/", async (req, res) => {
                     .catch((err) => console.error.apply(err));
             }
             if (authBoards[i].dislikes.length >= 5) {
-                console.log("dislikes가 5보다 커요!");
                 await AuthBoard.updateOne(
                     { _id: authBoards[i]._id },
                     { wrongAuth: true }
@@ -75,7 +70,7 @@ router.get("/", async (req, res) => {
                     .catch((err) => console.error.apply(err));
             }
         }
-        // console.log(authBoards);
+
         const resultAuthBoards = await AuthBoard.find({ compliteAuth: false })
             .find({ wrongAuth: false })
             .sort([["createdAt", -1]])
@@ -83,7 +78,6 @@ router.get("/", async (req, res) => {
             .populate("likes")
             .populate("comments.postedBy");
 
-        //console.log(resultAuthBoards[0].comments[0].text);
         return res.json({ resultAuthBoards });
     } catch (error) {
         console.log(error);
@@ -92,15 +86,7 @@ router.get("/", async (req, res) => {
 
 router.post("/post", upload.single("authBoardPhoto"), async (req, res) => {
     try {
-        // 아래 : Object: null prototype 삭제
-        // const obj = JSON.parse(JSON.stringify(req.body));
-        // console.log(obj);
-
-        const user = res.locals.user;
         const authBoardBody = req.body.authBody;
-        //         console.log(user);
-        // console.log(req.file, req.body);
-        // console.log(authBoardBody);
 
         const insertMongo = {
             authBody: authBoardBody,
@@ -109,12 +95,7 @@ router.post("/post", upload.single("authBoardPhoto"), async (req, res) => {
         };
 
         await AuthBoard.insertMany(insertMongo);
-        // .then(() => {
-        //     return res.status(200).json({ postAuthBoard: true });
-        // })
-        // .catch((err) => {
-        //     return res.json({ postAuthBoard: false });
-        // });
+
         const findAuthBoard = await AuthBoard.find({});
 
         return res.status(200).json({ findAuthBoard });
@@ -129,7 +110,6 @@ router.put("/like", async (req, res) => {
         const findPost = await AuthBoard.findOne({
             _id: req.body.postId,
         }).populate("likes");
-        console.log(findPost.likes.length, "개의 likes가 있음");
 
         if (findPost.likes.length == 0) {
             await AuthBoard.updateOne(
@@ -171,14 +151,13 @@ router.put("/dislike", async (req, res) => {
         const findPost = await AuthBoard.findOne({
             _id: req.body.postId,
         }).populate("dislikes");
-        console.log(findPost.dislikes.length, "개의 dislikes가 있음");
 
         if (findPost.dislikes.length == 0) {
             await AuthBoard.updateOne(
                 { _id: findPost._id },
                 { $push: { dislikes: user._id } }
             )
-                .then(console.log("싫어요 등록 완료"))
+                .then(console.log("미흡 등록 완료"))
                 .catch((err) => console.error("등록 실패", err));
         } else {
             for (let i = 0; i < findPost.dislikes.length; i++) {
@@ -187,7 +166,7 @@ router.put("/dislike", async (req, res) => {
                         { _id: findPost._id },
                         { $pull: { dislikes: { $in: [user._id] } } }
                     )
-                        .then(console.log("싫어요 취소 완료"))
+                        .then(console.log("미흡 취소 완료"))
                         .cathch((err) => console.error(err));
                 }
             }
@@ -195,7 +174,7 @@ router.put("/dislike", async (req, res) => {
                 { _id: findPost._id },
                 { $push: { dislikes: user._id } }
             )
-                .then(console.log("싫어요 등록 완료"))
+                .then(console.log("미흡 등록 완료"))
                 .catch((err) => console.error("등록 실패", err));
         }
 
@@ -218,7 +197,7 @@ router.post("/comments", async (req, res) => {
                 },
             }
         )
-            .then(console.log("성공했나..?"))
+            .then(console.log("댓글 등록 완료"))
             .catch((err) => console.error(err));
 
         return res.redirect("/authBoard");
