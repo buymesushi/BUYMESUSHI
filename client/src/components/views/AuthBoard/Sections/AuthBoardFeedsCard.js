@@ -83,9 +83,8 @@ export default function AuthBoardFeedsCard() {
     return (
         <React.Fragment>
             {lastIdx !== 0 ? (
-                Data.filter((data) => data.authBody !== "")
-                    .filter((data) => data.postedBy !== user.nickname)
-                    .map((rowData, index) => (
+                Data.filter((data) => data.authBody !== "").map(
+                    (rowData, index) => (
                         <Card sx={{ maxWidth: 600 }} key={index}>
                             <Link
                                 href={`/profile/${rowData.postedBy}`}
@@ -126,7 +125,8 @@ export default function AuthBoardFeedsCard() {
                                     <Typography
                                         variant="h7"
                                         color="black"
-                                        fontWeight={500}
+                                        fontWeight={600}
+                                        sx={{ ml: 1, mr: 2 }}
                                     >
                                         {rowData.postedBy}
                                     </Typography>
@@ -135,49 +135,82 @@ export default function AuthBoardFeedsCard() {
                                 {rowData.authBody}
                             </CardContent>
                             <CardActions disableSpacing>
-                                <div
-                                    className="AuthBoard-like-btn"
-                                    onClick={() => {
-                                        likePost(rowData._id);
-                                        window.location.reload();
-                                    }}
-                                >
-                                    <Button
-                                        variant="contained"
-                                        className="AuthBoard-like-btn-area"
-                                        style={{
-                                            background: "#3b5998",
-                                            fontWeight: "600",
-                                        }}
-                                    >
-                                        인증 {rowData.likes.length}
-                                    </Button>
-                                </div>
-                                <div
-                                    className="AuthBoard-dislike-btn"
-                                    onClick={() => {
-                                        dislikePost(rowData._id);
-                                        window.location.reload();
-                                    }}
-                                >
-                                    <Button
-                                        variant="contained"
-                                        className="AuthBoard-like-btn-area"
-                                        style={{
-                                            background: "#e80000",
-                                            fontWeight: "600",
-                                        }}
-                                    >
-                                        미흡 {rowData.dislikes.length}
-                                    </Button>
-                                </div>
+                                {rowData.postedBy === user.nickname ? (
+                                    <>
+                                        <Button
+                                            variant="contained"
+                                            className="AuthBoard-like-btn-area"
+                                            style={{
+                                                background: "#3b5998",
+                                                fontWeight: "600",
+                                                color: "#aaaaaa",
+                                            }}
+                                            disabled="true"
+                                        >
+                                            인증 {rowData.likes.length}
+                                        </Button>
+
+                                        <Button
+                                            variant="contained"
+                                            className="AuthBoard-like-btn-area"
+                                            style={{
+                                                background: "#a80000",
+                                                fontWeight: "600",
+                                                color: "#aaaaaa",
+                                            }}
+                                            disabled="true"
+                                        >
+                                            미흡 {rowData.dislikes.length}
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div
+                                            className="AuthBoard-like-btn"
+                                            onClick={() => {
+                                                likePost(rowData._id);
+                                                window.location.reload();
+                                            }}
+                                        >
+                                            <Button
+                                                variant="contained"
+                                                className="AuthBoard-like-btn-area"
+                                                style={{
+                                                    background: "#3b5998",
+                                                    fontWeight: "600",
+                                                }}
+                                            >
+                                                인증 {rowData.likes.length}
+                                            </Button>
+                                        </div>
+                                        <div
+                                            className="AuthBoard-dislike-btn"
+                                            onClick={() => {
+                                                dislikePost(rowData._id);
+                                                window.location.reload();
+                                            }}
+                                        >
+                                            <Button
+                                                variant="contained"
+                                                className="AuthBoard-like-btn-area"
+                                                style={{
+                                                    background: "#e80000",
+                                                    fontWeight: "600",
+                                                }}
+                                            >
+                                                미흡 {rowData.dislikes.length}
+                                            </Button>
+                                        </div>
+                                    </>
+                                )}
                             </CardActions>
                             <AuthBoardComments
                                 authBoards={rowData._id}
                                 commentsData={rowData.comments}
                             />
                         </Card>
-                    ))
+                    )
+                )
             ) : (
                 <div style={{ textAlign: "center" }}>
                     <h1>Loading...</h1>

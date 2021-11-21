@@ -15,10 +15,7 @@ const ProfileHead = (props) => {
         <div>
             <div className="Profile-header">
                 <div className="Profile-column">
-                    <img
-                        className="Profile-img"
-                        src="/img/profile/144img.png"
-                    />
+                    <img className="Profile-img" src={props.userImage} />
                 </div>
                 <div className="Profile-column">
                     <div className="Profile-title">{props.userData}</div>

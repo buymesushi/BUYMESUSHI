@@ -61,7 +61,9 @@
   padding: 1.8px;
   border-radius: 2px;
 }
-
+.GotoShop {
+  text-decoration: none;
+}
 .point > ul {
   margin: 0;
 }
@@ -84,7 +86,7 @@
   flex: 0.7;
   margin-right: 1rem;
   background-color: transparent;
-  width: 508px;
+  width: 520px;
   padding: 1rem;
   /* grid-row-start: 3; */
 }
