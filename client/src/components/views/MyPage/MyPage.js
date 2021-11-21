@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router";
 
 import CartItem from "../ShoppingPage/ShopComponents/CartItem";
 
@@ -181,7 +180,11 @@ const MyPage = (props) => {
                     {cartItems.length === 0 ? (
                         <div>
                             장바구니가 비었습니다{" "}
-                            <Link to="/product" className="GotoShop">
+                            <Link
+                                to="/product"
+                                className="GotoShop"
+                                style={{ fontWeight: "600" }}
+                            >
                                 쇼핑하러 가기
                             </Link>
                         </div>
