@@ -32,7 +32,6 @@ router.post("/register", (req, res) => {
     // 회원 가입 할 때 필요한 정보들을 client에서 가져오면
     // 그것들을 데이터 베이스에 넣어준다.
 
-    // 여기랑
     const user = new User(req.body);
 
     user.save(async (err, userInfo) => {
@@ -46,10 +45,6 @@ router.post("/register", (req, res) => {
 
         return res.status(200).json({ success: true });
     });
-    // user.save((err, userInfo) => {
-    //     if (err) return res.json({ success: false });
-    //     return res.status(200).json({ success: true });
-    // });
 });
 
 router.post("/login", (req, res) => {
@@ -71,7 +66,7 @@ router.post("/login", (req, res) => {
 
             user.generateToken((err, user) => {
                 if (err) return res.status(400).send(err);
-                // 토큰을 저장한다. 어디에 ? 일단 쿠키에
+                // 토큰을 쿠키에 저장한다.
                 res.cookie("x_auth", user.token)
                     .status(200)
                     .json({ loginSuccess: true, userId: user._id });

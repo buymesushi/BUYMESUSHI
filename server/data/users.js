@@ -1,10 +1,7 @@
-const mongoose = require('mongoose');
-const { ObjectId } = mongoose.Schema.Types;
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const bcrypt = require("bcrypt");
 
-const password = 'c123123!';
-let stored_hash = '';
+const password = "c123123!";
+let stored_hash = "";
 
 function genSalt(password) {
     return new Promise((resolve, reject) => {
@@ -68,39 +65,39 @@ genSalt(password)
 
 const users = [
     {
-        email: 'asdf@naver.com',
+        email: "asdf@naver.com",
         password:
-            '$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm',
-        name: '현석',
-        nickname: 'nick123',
+            "$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm",
+        name: "현석",
+        nickname: "nick123",
     },
     {
-        email: 'kim@naver.com',
+        email: "kim@naver.com",
         password:
-            '$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm',
-        name: '김씨',
-        nickname: 'kim123',
+            "$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm",
+        name: "김씨",
+        nickname: "kim123",
     },
     {
-        email: 'lee@naver.com',
+        email: "lee@naver.com",
         password:
-            '$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm',
-        name: '이씨',
-        nickname: 'lee123',
+            "$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm",
+        name: "이씨",
+        nickname: "lee123",
     },
     {
-        email: 'choi@naver.com',
+        email: "choi@naver.com",
         password:
-            '$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm',
-        name: '최씨',
-        nickname: 'choi123',
+            "$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm",
+        name: "최씨",
+        nickname: "choi123",
     },
     {
-        email: 'sung@naver.com',
+        email: "sung@naver.com",
         password:
-            '$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm',
-        name: '성씨',
-        nickname: 'sung123',
+            "$2b$10$mY78ZJEoNpqEsarOrDj49uuqZxeGrPpoEOoGdxydvjl6Ybb8yScwm",
+        name: "성씨",
+        nickname: "sung123",
     },
 ];
 

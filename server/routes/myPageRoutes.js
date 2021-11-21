@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
-const Product = require("../models/Product");
+
 const AuthBoard = require("../models/AuthBoard");
 
 const multer = require("multer");
@@ -9,7 +9,6 @@ const path = require("path");
 
 const { auth } = require("../middleware/auth");
 
-// 추후 다시 변경
 router.use(auth);
 router.use((req, res, next) => {
     res.locals.user = req.user;
@@ -26,7 +25,7 @@ const storageEngine = multer.diskStorage({
     },
 });
 const fileFilter = (req, file, callback) => {
-    let pattern = /jpg|png|svg/; // reqex
+    let pattern = /jpg|png|svg/;
 
     if (pattern.test(path.extname(file.originalname))) {
         callback(null, true);
@@ -69,12 +68,6 @@ router.get("/", async (req, res) => {
     } catch (error) {
         console.error(error);
     }
-
-    // const findProductUpdate = await User.findOne({ _id: user._id }).populate(
-    //   "products.productId"
-    // );
-    // console.log(findProductUpdate.products, "find");
-    // return res.status(200).json({ findProductUpdate });
 });
 
 router.put("/", async (req, res) => {
@@ -85,7 +78,7 @@ router.put("/", async (req, res) => {
         await User.updateOne(
             //현재유저의 아이디
             { _id: user._id },
-            //유저의 products에 넣기/ productId에는
+            //유저의 products에 넣기
             {
                 $push: {
                     products: [{ productId: req.body._id, qty: req.body.qty1 }],
