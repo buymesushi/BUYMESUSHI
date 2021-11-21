@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import "./Board.css";
 import axios from "axios";
 import Button from "@mui/material/Button";
@@ -7,6 +8,7 @@ import BoardDetail from "./BoardDetail";
 import BoardWrite from "./BoardWrite";
 import CloseIcon from "@mui/icons-material/Close";
 import styled from "styled-components";
+import { withTheme } from "@emotion/react";
 
 // styled component 1
 const customStyles = {
@@ -34,11 +36,16 @@ const Container = styled.div`
   float: left;
 `;
 // styled component 3
+const BoardButton = styled(Button)({
+  backgroundColor: "#3b5998",
+  left: "79.3vw",
+});
+// styled component 4
 const BoardWriteButton = styled(Button)({
   backgroundColor: "#3b5998",
   left: "79.3vw",
 });
-//styled component 5
+// styled component 5
 const customStyles2 = {
   content: {
     width: "80vw",
@@ -78,6 +85,8 @@ function Board() {
 
     },
   ]);
+  const user = useSelector((state) => state.user.userData);
+  const [viewCount, setViewCount] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {

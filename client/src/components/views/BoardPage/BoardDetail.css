@@ -13,7 +13,6 @@ body *:after {
 body .wrapper1 {
   width: 300px;
   margin: 0 auto;
-  /* max-width: 100%; */
   padding: 0 10px;
 }
 
@@ -27,7 +26,6 @@ body .clearfix:after {
 }
 
 .board .header {
-  /* margin-bottom: 30px; */
   text-align: center;
 }
 
@@ -91,7 +89,6 @@ body .clearfix:after {
 }
 
 .board .article .search {
-  /* margin-top: 20px; */
   font-size: 14px;
   text-align: right;
 }

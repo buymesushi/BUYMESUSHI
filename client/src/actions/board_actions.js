@@ -1,7 +1,7 @@
 import axios from 'axios';
 const { POST_BOARD } = require('./types');
 
-export function Board(dataTosubmit) {
+export function postAuthBoard(dataTosubmit) {
   const request = axios
     .post('/api/board/write', dataTosubmit)
     .then((response) => response.data);
