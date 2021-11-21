@@ -13,157 +13,155 @@ import CardActions from "@mui/material/CardActions";
 import CloseIcon from "@mui/icons-material/Close";
 
 const customStyles = {
-    content: {
-        width: "600px",
-        height: "75vh",
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-        borderRadius: "10px",
-    },
-    overlay: {
-        position: "fixed",
-        backgroundColor: "rgba(118, 135, 163, 0.75)",
-    },
+  content: {
+    width: "600px",
+    height: "75vh",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    borderRadius: "10px",
+  },
+  overlay: {
+    position: "fixed",
+    backgroundColor: "rgba(118, 135, 163, 0.75)",
+  },
 };
 
 const MyButton = styled(Button)`
-    background: linear-gradient(45deg, #fe6b8b 20%, #3b5998 90%);
-    &:hover {
-        background: linear-gradient(45deg, #3b5998 20%, #fe6b8b 90%);
-    }
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
-    color: white;
-    height: 48px;
-    padding: 0 30px;
-    /* align-items: center;
+  background: linear-gradient(45deg, #fe6b8b 20%, #3b5998 90%);
+  &:hover {
+    background: linear-gradient(45deg, #3b5998 20%, #fe6b8b 90%);
+  }
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+  color: white;
+  height: 48px;
+  padding: 0 30px;
+  /* align-items: center;
   justify-content: center; */
 
-    margin: 0 auto;
-    display: block;
+  margin: 0 auto;
+  display: block;
 `;
 
 const AuthBoardPost = () => {
-    const [Body, setBody] = useState("");
-    const [Photo, setPhoto] = useState("");
-    const [fileUrl, setFileUrl] = useState(null);
+  const [Body, setBody] = useState("");
+  const [Photo, setPhoto] = useState("");
+  const [fileUrl, setFileUrl] = useState(null);
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const onBodyHandler = (event) => {
-        setBody(event.currentTarget.value);
-    };
+  const onBodyHandler = (event) => {
+    setBody(event.currentTarget.value);
+  };
 
-    const onPhotoHandler = (event) => {
-        const imageFile = event.target.files[0];
-        const imageUrl = URL.createObjectURL(imageFile);
+  const onPhotoHandler = (event) => {
+    const imageFile = event.target.files[0];
+    const imageUrl = URL.createObjectURL(imageFile);
 
-        setFileUrl(imageUrl);
-        setPhoto(event.currentTarget.value);
-    };
+    setFileUrl(imageUrl);
+    setPhoto(event.currentTarget.value);
+  };
 
-    const onSubmitHandler = (event) => {
-        if (Body === "") {
-            event.preventDefault();
-            return alert("본문을 입력해 주세요!");
-        } else if (Photo === "") {
-            event.preventDefault();
-            return alert("사진을 업로드 해주세요!");
-        }
+  const onSubmitHandler = (event) => {
+    if (Body === "") {
+      event.preventDefault();
+      return alert("본문을 입력해 주세요!");
+    } else if (Photo === "") {
+      event.preventDefault();
+      return alert("사진을 업로드 해주세요!");
+    }
 
-        let form = document.getElementById("authboard_post");
-        let formData = new FormData(form);
+    let form = document.getElementById("authboard_post");
+    let formData = new FormData(form);
 
-        axios.post("/api/authBoard/post", formData).then((response) => {
-            console.log("포스트 완료");
-        });
-    };
+    axios.post("/api/authBoard/post", formData).then((response) => {
+      console.log("포스트 완료");
+    });
+  };
 
-    return (
-        <div className="M_body">
-            <div className="MyButton_css">
-                <MyButton onClick={() => setModalIsOpen(true)}>
-                    지키미 올리기
-                </MyButton>
-            </div>
+  return (
+    <div className="M_body">
+      <div className="MyButton_css">
+        <MyButton onClick={() => setModalIsOpen(true)}>지키미 올리기</MyButton>
+      </div>
 
-            <Modal
-                isOpen={modalIsOpen}
-                style={customStyles}
-                onRequestClose={() => setModalIsOpen(false)}
-                className="AuthBoardPost-container"
-            >
-                <CloseIcon
-                    onClick={() => setModalIsOpen(false)}
-                    color="action"
-                    fontSize="large"
-                    cursor="pointer"
-                ></CloseIcon>
+      <Modal
+        isOpen={modalIsOpen}
+        style={customStyles}
+        onRequestClose={() => setModalIsOpen(false)}
+        className="AuthBoardPost-container"
+      >
+        <CloseIcon
+          onClick={() => setModalIsOpen(false)}
+          color="action"
+          fontSize="large"
+          cursor="pointer"
+        ></CloseIcon>
 
-                <form
-                    onSubmit={onSubmitHandler}
-                    encType="multipart/form-data"
-                    id="authboard_post"
-                >
-                    <Card sx={{ maxWidth: 600 }}>
-                        <CardMedia
-                            className="AuthBoardPost-photoPlace"
-                            component="img"
-                            height="400"
-                            image={fileUrl}
-                        />
-                        <CardContent>
-                            <div className="AuthBoardPost-Body-area">
-                                <input
-                                    className="AuthBoardPost-Body"
-                                    type="text"
-                                    name="authBody"
-                                    value={Body}
-                                    onChange={onBodyHandler}
-                                    placeholder="내용을 입력하세요"
-                                />
-                            </div>
-                        </CardContent>
-                        <CardActions style={{}}>
-                            <Button
-                                variant="contained"
-                                component="label"
-                                className="AuthBoardPost-Photo"
-                                style={{
-                                    background: "#3b5998",
-                                }}
-                            >
-                                Upload Image
-                                <input
-                                    id="input-image"
-                                    type="file"
-                                    name="authBoardPhoto"
-                                    value={Photo}
-                                    onChange={onPhotoHandler}
-                                    hidden
-                                />
-                            </Button>
-                            <Button
-                                variant="contained"
-                                type="submit"
-                                className="AuthBoardPost-submit-btn"
-                                style={{
-                                    background: "#3b5998",
-                                }}
-                            >
-                                제출
-                            </Button>
-                        </CardActions>
-                    </Card>
-                </form>
-            </Modal>
-        </div>
-    );
+        <form
+          onSubmit={onSubmitHandler}
+          encType="multipart/form-data"
+          id="authboard_post"
+        >
+          <Card sx={{ maxWidth: 600 }}>
+            <CardMedia
+              className="AuthBoardPost-photoPlace"
+              component="img"
+              height="400"
+              image={fileUrl}
+            />
+            <CardContent>
+              <div className="AuthBoardPost-Body-area">
+                <input
+                  className="AuthBoardPost-Body"
+                  type="text"
+                  name="authBody"
+                  value={Body}
+                  onChange={onBodyHandler}
+                  placeholder="내용을 입력하세요"
+                />
+              </div>
+            </CardContent>
+            <CardActions style={{ marginTop: "-5vh" }}>
+              <Button
+                variant="contained"
+                component="label"
+                className="AuthBoardPost-Photo"
+                style={{
+                  background: "#3b5998",
+                }}
+              >
+                Upload Image
+                <input
+                  id="input-image"
+                  type="file"
+                  name="authBoardPhoto"
+                  value={Photo}
+                  onChange={onPhotoHandler}
+                  hidden
+                />
+              </Button>
+              <Button
+                variant="contained"
+                type="submit"
+                className="AuthBoardPost-submit-btn"
+                style={{
+                  background: "#3b5998",
+                }}
+              >
+                제출
+              </Button>
+            </CardActions>
+          </Card>
+        </form>
+      </Modal>
+    </div>
+  );
 };
 
 export default withRouter(AuthBoardPost);
