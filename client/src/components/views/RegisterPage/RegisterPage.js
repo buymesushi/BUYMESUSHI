@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { registerUser } from "../../../actions/user_actions";
-import { Controller, useForm } from "react-hook-form";
+
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -13,7 +13,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
