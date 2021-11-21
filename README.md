@@ -3,8 +3,8 @@
 # 프로젝트팀명 : BUYMESUSHI
 
 
-## 👜👢🧢3E('') - 주제 미정
-## 프로젝트 시작일 : 2021-11-13
+## 👜👢🧢BUYMESUSHI('회사조') - 탄소 감축을 위한 인증 SNS 플랫폼
+## 프로젝트 시작일 : 2021-11-05
 
 ## 👜👢🧢[**서비스로 이동**](http://주소 미정/)
 
@@ -13,7 +13,7 @@
 p.s. 현재 서버를 닫은 관계로 실행이 되지 않습니다
 
 --  
-<img width="700" alt="스크린샷 2021-10-15 오후 3 51 02" src="https://user-images.githubusercontent.com/89692626/137611758-973688ea-0418-4b07-a945-e0b17c3d6fb0.png">
+<img width="700" alt="스크린샷 2021-11-05" src="https://user-images.githubusercontent.com/89692626/142747278-39f3f30e-f8d2-4b99-a61f-ceae18ca9d0b.png">  
 
 ---   
 
@@ -61,16 +61,16 @@ Member.
 ***
 
 ### 개요
-
-패션 커뮤니티 활성화를 위한 쇼핑몰 구성
+  
+탄소 감축을 위한 인증 SNS 플랫폼  
 
 ### 목적
 
->  패션 커뮤니티 활성화를 위한 쇼핑몰 구성
+>  탄소 감축을 위한 인증 SNS 플랫폼
 > 
-> 1. 커뮤니티 활성화
+> 1. SNS 기능 활성화
 > 2. 프로젝트 경험
-> 3. 결제서비스 구현 숙달
+> 3. 블록체인 기반 암호화폐로 대체될 포인트제도 숙달
 > 
 
 - **기존 서비스와의 차별점**
@@ -80,22 +80,27 @@ Member.
    - 자체 할인율 적용 결제서비스 연동(솔루션)
    
 
-### 전체 소스 코드 [소스](https://github.com/3eteam/3eteamproject)
+### 전체 소스 코드 [소스](https://github.com/buymesushi/BUYMESUSHI.git)
 
 
 ### 사용한 기술
 
-- 웹 화면 구성 : `HTML5` `CSS3` `bootstrap` `JavaScript``Scss``React`
-- 검색 결과 데이터 요청 및 출력 : `jQuery` `Ajax` `JSON``axios`
+- 웹 화면 구성 : `HTML5` `CSS3` `React` `JavaScript` `Scss` `Styled-Component`
+- 검색 결과 데이터 요청 및 출력 : `Ajax` `JSON` `axios`
 - DB 액션 처리 : `Mongoose`
 - DBMS : `MongoDB`
 - 개발 Tool :`PostMan``Visual Studio Code` `Atom`
-- AWS 배포 : `EC2` ``
-- 로그인 Api : `KakaoTalk API`
-- 채팅 Api : `Gitpull`
+- AWS 배포 : `EC2`
+- 날씨 Api : `openweathermap API`
 - 프레임워크 : `NodeJs`
-- 결제: `Bootpay`
-- 프로젝트 관리 Tool : `Google Drive` `GitHub`
+- 프로젝트 관리 Tool : `Google Drive` `GitHub`  
+
+
+-------------------------------------------------------------------여기까지------------------------------------------------------------------------
+
+
+
+
 - 사용 모듈(v) : ` "axios": "^0.22.0",
                 "bcrypt": "^5.0.1",
                 "bootpay-js": "^3.3.3",
