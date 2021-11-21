@@ -156,16 +156,15 @@ const MyPage = (props) => {
               </div>
 
               <p>
-                subtotal (
-                <span className="MyPage-cartItemQty">{getCartCount()}</span>)
-                items
+                총 (<span className="MyPage-cartItemQty">{getCartCount()}</span>
+                ) 상품
               </p>
               {/* <p>결제예정금액 ${getCartSubTotasl().toFixed(2)}</p> */}
             </div>
             <div>
               {getCartSubTotasl() <= userData1.points ? (
                 cartItems.length === 0 ? (
-                  <button onClick={emptyProduct}>Proceed To Checkout</button>
+                  <button onClick={emptyProduct}>결제하기</button>
                 ) : (
                   <button
                     onClick={() => {
@@ -176,11 +175,11 @@ const MyPage = (props) => {
                   </button>
                 )
               ) : (
-                <button onClick={exceedPoint}>Proceed To Checkout</button>
+                <button onClick={exceedPoint}>결제하기</button>
               )}
             </div>
           </div>
-          <h2>장바구니</h2>
+          <h2 style={{ marginTop: "5vh" }}>장바구니</h2>
           {cartItems.length === 0 ? (
             <div>
               장바구니가 비었습니다{" "}
