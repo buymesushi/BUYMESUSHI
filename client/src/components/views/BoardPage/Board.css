@@ -1,185 +1,185 @@
 body *,
 body *:before,
 body *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body .wrapper {
-  /* width: 90vw; */
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 0 15px;
+    /* width: 90vw; */
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 15px;
 }
 
 body .clearfix:after {
-  content: " ";
-  clear: both;
-  display: table;
+    content: " ";
+    clear: both;
+    display: table;
 }
 .board {
-  margin-bottom: 30px;
-  /* margin-left: 100px; */
+    margin-bottom: 30px;
+    /* margin-left: 100px; */
 }
 
 .board .header {
-  margin-bottom: 30px;
-  margin-right: 100px;
-  text-align: center;
+    margin-bottom: 30px;
+    margin-right: 0;
+    text-align: center;
 }
 
 .board .header .title {
-  margin-top: 25px;
-  font-size: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #3b5998;
+    margin-top: 25px;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #3b5998;
 }
 
 .board .header .desc {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 .board .article .showlist {
-  width: 1310px;
+    width: 1310px;
 }
 .board .article table {
-  width: 100%;
-  max-width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
 }
 
 .board .article table th,
 .board .article table td {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  overflow: hidden;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
 }
 
 .board .article table th {
-  background: #f7f7f7;
+    background: #f7f7f7;
 }
 
 .board .article table td.title {
-  text-align: left;
+    text-align: left;
 }
 
 .board .article table td a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .board .article table td.title span {
-  display: inline-block;
-  padding: 3px 5px;
-  color: #fff;
-  font-size: 10px;
-  margin-left: 3px;
+    display: inline-block;
+    padding: 3px 5px;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 3px;
 }
 
 .board .article table td a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .board .article .search {
-  margin-top: 20px;
-  font-size: 14px;
-  text-align: right;
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: right;
 }
 
 .board .article .search .count {
-  float: left;
-  border: 1px solid #ddd;
-  padding: 12px;
+    float: left;
+    border: 1px solid #ddd;
+    padding: 12px;
 }
 
 .board .article .search .bundle {
-  width: 370px;
-  margin-left: auto;
+    width: 370px;
+    margin-left: auto;
 }
 
 .board .article .search .bundle select {
-  height: 42px;
-  border: 1px solid #ddd;
-  vertical-align: middle;
-  border-radius: 0;
-  padding: 0 5px;
-  float: left;
-  width: 35%;
+    height: 42px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    border-radius: 0;
+    padding: 0 5px;
+    float: left;
+    width: 35%;
 }
 
 .board .article .search .bundle input {
-  vertical-align: middle;
-  border: 1px solid #ddd;
-  border-left: 0;
-  border-radius: 0;
-  height: 42px;
-  padding: 0 10px;
-  float: left;
-  width: 53.5%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-radius: 0;
+    height: 42px;
+    padding: 0 10px;
+    float: left;
+    width: 53.5%;
 }
 
 .board .article .search button {
-  border: 1px solid #3b5998;
-  background: #3b5998;
-  vertical-align: middle;
-  color: #fff;
-  height: 42px;
-  cursor: pointer;
-  padding: 0 13px;
-  float: left;
-  width: 11.5%;
+    border: 1px solid #3b5998;
+    background: #3b5998;
+    vertical-align: middle;
+    color: #fff;
+    height: 42px;
+    cursor: pointer;
+    padding: 0 13px;
+    float: left;
+    width: 11.5%;
 }
 
 .board .article .pages {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .board .article .pages ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .board .article .pages ul > li {
-  display: inline-block;
+    display: inline-block;
 }
 
 .board .article .pages ul > li > a {
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 13px;
-  font-size: 14px;
-  border: 1px solid #ddd;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 13px;
+    font-size: 14px;
+    border: 1px solid #ddd;
 }
 
 .board .article .pages ul > li > a:hover {
-  background: #eee;
+    background: #eee;
 }
 
 .board .article .pages ul > li.active > a {
-  background: #3b5998;
-  border-color: #3b5998;
-  color: #fff;
+    background: #3b5998;
+    border-color: #3b5998;
+    color: #fff;
 }
 
 @media (max-width: 767px) {
-  .board .article table .check,
-  .board .article table .num,
-  .board .article table .date,
-  .board .article table .views {
-    display: none;
-  }
+    .board .article table .check,
+    .board .article table .num,
+    .board .article table .date,
+    .board .article table .views {
+        display: none;
+    }
 
-  .board .article .search .count {
-    display: none;
-  }
+    .board .article .search .count {
+        display: none;
+    }
 
-  .board .article .search .bundle {
-    width: 100%;
-  }
+    .board .article .search .bundle {
+        width: 100%;
+    }
 }
