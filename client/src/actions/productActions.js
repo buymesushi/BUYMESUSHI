@@ -1,6 +1,5 @@
 import * as actionTypes from "../redux/constants/productConstants";
 import axios from "axios";
-import { ContactSupportSharp } from "@material-ui/icons";
 
 export const getProducts = () => async (dispatch) => {
     try {
@@ -29,7 +28,6 @@ export const getProductDetails = (id) => async (dispatch) => {
             type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
             payload: data,
         });
-        // console.log(data, "데이터 체크 디테일");
     } catch (error) {
         dispatch({
             // type: actionTypes.GET_PRODUCTS_FAIL,
