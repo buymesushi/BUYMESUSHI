@@ -68,10 +68,10 @@ const AuthBoardPost = () => {
     };
 
     const onSubmitHandler = (event) => {
-        if (Body == "") {
+        if (Body === "") {
             event.preventDefault();
             return alert("본문을 입력해 주세요!");
-        } else if (Photo == "") {
+        } else if (Photo === "") {
             event.preventDefault();
             return alert("사진을 업로드 해주세요!");
         }

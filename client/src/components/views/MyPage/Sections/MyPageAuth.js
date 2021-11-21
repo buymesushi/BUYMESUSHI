@@ -43,11 +43,11 @@ const MyPageAuth = (props) => {
                 <div className="Profile-body-photos">
                     {props.photoData
                         .filter((data) => data.photo !== "")
-                        .filter((data) => data.compliteAuth == false)
-                        .filter((data) => data.wrongAuth == false)
+                        .filter((data) => data.compliteAuth === false)
+                        .filter((data) => data.wrongAuth === false)
                         .map((rowData, index) => (
                             <div className="Profile-body-photo" key={index}>
-                                <img src={rowData.photo} />
+                                <img src={rowData.photo} alt="wait-posts" />
                             </div>
                         ))}
                 </div>
@@ -55,11 +55,11 @@ const MyPageAuth = (props) => {
                 <div className="Profile-body-photos">
                     {props.photoData
                         .filter((data) => data.photo !== "")
-                        .filter((data) => data.compliteAuth == true)
-                        .filter((data) => data.wrongAuth == false)
+                        .filter((data) => data.compliteAuth === true)
+                        .filter((data) => data.wrongAuth === false)
                         .map((rowData, index) => (
                             <div className="Profile-body-photo" key={index}>
-                                <img src={rowData.photo} />
+                                <img src={rowData.photo} alt="complete-posts" />
                             </div>
                         ))}
                 </div>
@@ -67,11 +67,14 @@ const MyPageAuth = (props) => {
                 <div className="Profile-body-photos">
                     {props.photoData
                         .filter((data) => data.photo !== "")
-                        .filter((data) => data.compliteAuth == false)
-                        .filter((data) => data.wrongAuth == true)
+                        .filter((data) => data.compliteAuth === false)
+                        .filter((data) => data.wrongAuth === true)
                         .map((rowData, index) => (
                             <div className="Profile-body-photo" key={index}>
-                                <img src={rowData.photo} />
+                                <img
+                                    src={rowData.photo}
+                                    alt="rejection-posts"
+                                />
                             </div>
                         ))}
                 </div>

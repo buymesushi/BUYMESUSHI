@@ -44,7 +44,7 @@ const MyPageUserModal = (props) => {
     };
 
     const onSubmitHandler = (event) => {
-        if (Photo == "") {
+        if (Photo === "") {
             event.preventDefault();
             return alert("사진을 업로드 해주세요!");
         }
@@ -63,6 +63,7 @@ const MyPageUserModal = (props) => {
                 className="Profile-img"
                 src={props.userImage}
                 onClick={() => setModalIsOpen(true)}
+                alt="profile-img"
             />
             <Modal
                 isOpen={modalIsOpen}

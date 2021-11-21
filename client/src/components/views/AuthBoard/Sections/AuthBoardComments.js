@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -21,7 +21,7 @@ export default function AuthBoardComments({ authBoards, commentsData }) {
     };
 
     const onSubmitHandler = (event) => {
-        if (comments == "") {
+        if (comments === "") {
             event.preventDefault();
             return alert("내용을 입력해 주세요!");
         }

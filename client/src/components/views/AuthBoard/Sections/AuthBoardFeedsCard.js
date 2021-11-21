@@ -100,6 +100,7 @@ export default function AuthBoardFeedsCard() {
                                                     width: "40px",
                                                     height: "40px",
                                                 }}
+                                                alt="프로필 이미지"
                                             />
                                         </Avatar>
                                     }
