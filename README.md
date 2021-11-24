@@ -138,129 +138,74 @@ Member.
 -   메인페이지 : `MUI` `styled-components` `modal` `react-slick` `API` `chartjs`
 -   로그인 : 일반 로그인, `mongoose` `JWT` `redux` `Token` `bcrypt`
 -   회원가입 : `mongoose` `nodeJS` `bcrypt` `validation`
--   소개 : `혜린`
+-   소개 : `MUI` `styled-components` `react-scroll` `react-scroll-slider` `Custom Hook`
 -   지키미인증 : `mongoose` `multer` `redux` `axios`
--   포인트사용 : `소윤`
--   미니게임 : `혜린`
+-   포인트사용 : `mongoose` `redux` `axios`
+-   미니게임 : `Vanilla JS`
 -   게시판 : `mongoose` `express` `axios` `modal`
 -   마이페이지 : `mongoose` `redux` `axios`
 
 # 발생한 이슈 & 해결 방법
 
-------------------자기가 맡은 부분 적기--------------------------
-
 ### "Nodejs 처리에서의 문제점 파악 ,db및 구조설계 "
 
--   Nunjucks 템플릿 엔진 사용에 미숙으로 인한 에러발생
+-   리덕스,id값 전송 시 수량 값 추가하기
 
-[상황] nunjucks 동적인 처리 미숙으로 인해 템플릿 에러발생
+[상황] 미숙한 redux 사용으로 기존 스토어를 통한 상태값과 함수 주입에 어려움을 겪었다.
 
-[문제] nunjucks 동적인 처리 미숙으로 인해 템플릿 에러발생
+[문제] 리덕스를 사용해 장바구니에 쇼핑목록값을 저장하고 데이터관계설정으로 User에 products를 추가하였음에도 db연결을 하지 못해 모든
+회원의 마이페이지 내용이 동일하였다.
 
-[해결] public파일 생성후 에러 해결
+[해결] 쇼핑카트에서 마이페이지로 선택한 products들의 data를 넘겨주도록
+하였다. 기존 data에 수량까지 추가해 mypage라우터로 axios.put으로 넘겨주었다.
+마이페이지 라우터에서 현재 유저의 아이디에 해당하면 정해진 db설정에 맞게 $push해 주었다.
 
--   nunjucks for문 구현 시 화면에 구현 장애
+-   상태관리 useState useEffect redux
 
-[상황] 장바구니 구현시 nunjucks 활용
+[상황] 초반 redux 사용(user). 이후 useState, useEffect 주로 사용
 
-[문제] for문 과 mysql 관계 설정 미숙으로 인해 화면에 렌더링이 안댐
+[문제] redux값 useState에 대입, 렌더링 전 state값 undefined로 출력됨
 
-[해결] nunjucks 와 관게쿼리 해결 완료 로 인해 문제해결
+[해결] if문 사용하여 undefined시 return null, state 값 있을 시 해당 부분 렌더링
 
--   라우트 get,post,CRUD 메서드 연결 구현 이해부족
+-   route 연결 proxy
 
-[상황] 게시물,장바구니,상품등록,회원가입 구현에 있어서 에러발생
+[상황] 라우터 연결 시 연결 오류
 
-[문제] 게시물,장바구니,상품등록등 등 관계쿼리 사용부분에 있어서 CRUD에 대한 이해부족으로 인해 장애발생
+[문제] [HPM] Error occurred while proxying request 에러 발생
 
-[해결] 추가적인 학습과 관계쿼리 추가로 이해하면서 보안하여 장애 해결
+[해결] client와 server 연결 시 RESTful API 지켜줘야함
 
--   Git 브랜치 활용 미숙
+-   react if문 사용
 
-[상황] 코드 병합
+[상황] react render 안에서 if문 사용
 
-[문제] 각자 코드 작성 한것에 대한 코드 병합시 에러발생 (코드 병합시 코드 삭제댐)
+[문제] render안에서 if문 사용 불가
 
-[해결] 분업화 및 소통활성화 후에 코드 병합시 순차적으로 병합
+[해결] render 밖에서 if문 사용 또는 삼항연산자 사용
 
--   Nunjucks css,js코드먹통
+-   이미지 업로드
 
-[상황] 코드 가 스크립트,링크로 경로를지정해줘도 코드가먹지않는현상
+[상황] 이미지 업로드 시 fakepath 경로 오류
 
-[문제] 동적인파일이먹는곳은 메인,레이아웃등 헤더, 코드가 연결이되는데 그외에 인크루드방식으로 사용하는 html은 코드가 먹통이되는현상이생김
+[문제] chrome에서는 보안문제 때문에 로컬 전체 경로를 알지 못하게 하는 보안 기능이 있음
 
-[해결] 인크루드방식코드는 html파일자체에 css,js를 작성했음
+[해결] URL.createObjectURL 메소드 사용
 
-      - 코드먹통으로인한 SASS사용
+-   몽고디비 seeder 생성
 
-      [상황] 링크,스크립트경로지정이안되어 SCSS 컴파일한 CSS 동적인요소언어들이 먹지않는현상
+[상황] 초기 데이터 생성 위하여 seed Data 설정
 
-      [문제] 어떻게든 스크립트형식이나 링크를 해결할려고했으나 구글링을해도 넌적스에대한 관련대체방안들이 너무적어서 참고할요소가 없어서 SCSS를 포기해야되는지 고민
+[문제] 암호생성을 위하여 bcrypt 사용. 해당 데이터 Object(<promise>)로 출력
 
-      [해결] SCSS파일을 CSS로 컴파일후 겹치는 CSS요소가있는지 각파일마다 확인후 자체적으로 따로 HTML파일안에 스타일을 지정해줌으로써 해결
+[해결] 프로젝트 진행을 위하여 암호화 된 문자열 직접 입력 ( 추후 해결 필요 )
 
--   Socket.io 의 ngrock 서버문제
-
-[상황] ngrock의 문제
-
-[문제] ngrock 이 최대 3명만가능해서 채팅기능이 3명이상 채팅이불가능했던 문제
-
-[해결] ec2서버를열때 rgrock 을 사용하지않고 소켓을 자체적으로 서버를 열어서 인크루드방식으로 바꿈으로서 대량의인원도 문제없도록 해결함
-
-### "게시판 CRUD 기능에서의 라우팅과 db관계설정"
-
--   두 테이블간의 관계 핸들링 미숙
-
-[상황] 게시글을 작성한 유저의 nick 값을 작성자 란에 넣지 못함
-
-[문제] 해당 페이지로 데이터를 보냄과 nunjucks 문으로 그 값을 불러오는데 있어 미숙
-
-[해결] 라우터에서 정보를 get할 때 User model에서 nick을 attributes에 추가해주고 nunjucks 문에서는 board의 User 모델을 불러옴
-
--   조회수 ++ 선언과 할당에 대한 이슈
-
-[상황] 특정 게시물을 눌렀을 때 조회수(viewcount column)값을 올리지 못함
-
-[문제] 렌더링/선언과 할당에 대한 이해 부족
-
-[해결] 해당 게시물이 렌더링 되기 전에 선택된 그 글의 viewcount에 1을 더한값을 할당해 보여줌
-
-### "NodeJs ,Socket.IO 를 통해 실시간 통신을 구현"
-
--   실시간 채팅 구현
-
-[상황] 사용자들끼리 실시간 쇼핑관련 소통을하기위한 채팅
-
-[문제] socket.io서버 를 코드에 추가할 떄 오류 발생
-
-[해결] 서버의 순서도를 재배치 함으로써 문제 해결
-
--   socket.id와 idx
-
-[상황] 특정 사용자에게 메세지를 보내려면 해당 사용자의 socket.id를 알아야 함
-
-[문제] socket.id는 브라우저를 킬 때마다 새롭게 생성됨, 고유한 key가 되지 못함
-
-[해결] 해당 회원을 식별할 수 있는 idx 값을 활용: idx값을 속성이름으로 추가, 그 속성의 값은 소켓의 ID값으로 할당함
-
--   connected
-
-[상황] 'ooo님이 채팅방에 입장/퇴장 하셨습니다' 기능을 추가해야함
-
-[문제] 시간 부족으로 인해 미완성
-
-[해결] 나중에 보안 할 예정
-
-**NodeJs socket.io 깨달은 점 **
-
-실시간 사용자들끼리의 채팅이기에 socket.id를 사용하는 1:1 채팅을 구현했음. socket.io 특성 상 사용자 지정에 대한 이해도 숙지
-
-# AWS 활용(EC2, RDS)
+<!-- # AWS 활용(EC2, RDS)
 
 ------------------ 미정 ---------------------
 
-<img width="500" alt="34" src="https://user-images.githubusercontent.com/89692626/137617870-177cb2d9-854b-423a-b04d-3bf45de24ae9.png">     
-<img width="1000" alt="35" src="https://user-images.githubusercontent.com/89692626/137617902-f1bfc9b5-8462-4300-9365-4bd45017b2f3.png">    
+<img width="500" alt="34" src="https://user-images.githubusercontent.com/89692626/137617870-177cb2d9-854b-423a-b04d-3bf45de24ae9.png">
+<img width="1000" alt="35" src="https://user-images.githubusercontent.com/89692626/137617902-f1bfc9b5-8462-4300-9365-4bd45017b2f3.png">
 <img width="1000" alt="36" src="https://user-images.githubusercontent.com/89692626/137617905-318f133b-24b3-48ee-800d-3e491d550487.png">
 
 데이터베이스 AWS EC2방식 체택 인스턴스 생성후 키값생성 후
@@ -276,9 +221,9 @@ Member.
 AWS의 RDS로 데이터베이스를 공유하여 협업하여 프로젝트를 진행하였고
 AWS의 EC2를 활용하여 배포를 하였습니다
 
-서버 연결하기 전 SCREEN을 활용 cmd창을 닫거나 컴퓨터를 종료하여도 서버가 계속 돌아가게 유지했습니다
+서버 연결하기 전 SCREEN을 활용 cmd창을 닫거나 컴퓨터를 종료하여도 서버가 계속 돌아가게 유지했습니다 -->
 
-# 상세 설명
+# 디렉토리 설명
 
 전체 코드 : [코드](https://github.com/buymesushi/BUYMESUSHI.git)
 
@@ -286,79 +231,60 @@ AWS의 EC2를 활용하여 배포를 하였습니다
     BUYMESUSHI
     |
     |--node_modules         - 모듈
-    |--client               - 클라이언트
+    |--client               - Front 폴더
     |   |--node_modules     - 모듈
-    |   |--public
-    |   |   |--img
-    |   |--src
-    |   |   |--actions
-    |   |   |--components
-    |   |   |   |--views
-    |   |   |--hoc
-    |   |   |--reducers
-    |   |   |--redux
-    |   |--App.js
-    |   |--setupProxy.js
+    |   |--public           - Front 정적 폴더
+    |   |   |--img          - Front 정적 이미지 폴더
+    |   |--src              - source 폴더
+    |   |   |--actions      - 액션 메서드 모음 폴더
+    |   |   |--components   - 컴포넌트 폴더
+    |   |   |   |--views    - 각종 컴포넌트 모음 폴더
+    |   |   |--hoc          - 권환 관리 모음 폴더
+    |   |   |--reducers     - 리듀서 모음 폴더
+    |   |   |--redux        - 상태관리 폴더
+    |   |--App.js           - 컴포넌트 모음
+    |   |--index.js         - 진입 파일
+    |   |--setupProxy.js    - 프록시 설정
     |
-    |--server
-        |--config
-        |--controller
-        |--data
-        |--middleware
-        |--models
-        |--routes
+    |--server               - Backend 폴더
+        |--config           - 각종 환경 설정 관리 폴더
+        |--controller       - Req, Res 담당 폴더
+        |--data             - seed 데이터 초기 값 관리 폴더
+        |--middleware       - 각종 미들웨어
+        |--models           - 데이터베이스의 각 컬렉션에 해당하는 파일들 모음
+        |--routes           - 각종 라우터 모음
         |
-        |--index.js
+        |--index.js         - 진입 파일
 
-
-
-
-    views : html(Nunjucks)
-    video : video files(front 영상)
-    vendor : cdn파일(scss, jQuery 모음)
-    uploads : img파일(게시글 등록, 상품 등록 시 자동생성되어 이미지를url로 mySQL DB에 저장)
-    routes : 페이지별 라우트 생성(CRUD, sequelize)
-    public : front 동적(css, js, img)
-    profileimg : img파일(회원가입 시 자동생성되어 이미지를url로 mySQL DB에 저장)
-    passport : 로그인 관리
-    node_modeules
-    models : DB 테이블 생성(sequelize, 관계도 형성)
-    imgages/icons : favicon파일
-    fonts : 다운받은 폰트 모음
-    config : AWS RDS 연동
-
-서버(app.js) : [코드](https://github.com/3eteam/3eteamproject/blob/f2a2e1500f375490e0b2090779ab612237ae2039/3e/app.js)
--> 각 페이지별 라우터 설정, passport 6002번, express 모듈로 넌적스를 http로 연결
-
-### 페이지별 설명(views-html)
+<!-- ### 페이지별 설명(views-html)
 
 ## board : board, boarddetail, boardwrite, boardedit
 
-<img width="400" alt="61" src="https://user-images.githubusercontent.com/89692626/137718441-cb96579f-a46a-4201-90aa-ed579aa468f2.png">  
-게시판의 첫 페이지로 게시글 번호는 AUTO INCREMENT되는 게시글의 id로 나타나고 작성자에는 해당 게시글을 작성한 유저의 닉네임이 표시된다.  
-<img width="400" alt="62" src="https://user-images.githubusercontent.com/89692626/137718449-2d768a39-72bf-4168-912a-4912b46db76f.png">  
-글 작성 버튼을 누르면 넘어가는 페이지로 제목과 내용과 사진을 업로드할 수 있고 제출버튼을 누르면 게시글이 DB에 저장되어 board게시판에 보여진다.  
-<img width="400" alt="63" src="https://user-images.githubusercontent.com/89692626/137718456-fb72d3c2-3d5a-43f0-b5aa-508ba4a759d7.png">  
-방금 작성한 게시글이 닉네임과 함께 등록된 모습이다.  
-<img width="400" alt="64" src="https://user-images.githubusercontent.com/89692626/137718457-02edc0c9-5f7f-4db9-a3ad-d6562be1a375.png">  
-게시글의 제목을 누르면 해당 글을 더 자세히 볼 수 있는데 조회수는 해당 페이지로 렌더링되기 전에 게시글의 viewcount가 1 올라간다.   
-<img width="368" alt="55" src="https://user-images.githubusercontent.com/89692626/137724837-d882c490-206e-4b66-b4b6-3b303fa00707.png">  
-자기가 쓴 글에는 유저Nick과 해당 게시글의 Nick이 같기 때문에 수정과 삭제 버튼이 생긴다. 삭제를 하게 되면 DB에서 해당글이 사라진다.  
-<img width="400" alt="65" src="https://user-images.githubusercontent.com/89692626/137718460-66a12fda-10f2-46c0-81b3-5f248780e6d4.png">  
-수정을 하면 제목과 내용은 value를 가져와서 그대로 뜬 상태에서 글을 수정할 수 있게 되어있고 위와 같이 수정이 된다.  
-<img width="400" alt="66" src="https://user-images.githubusercontent.com/89692626/137718461-a7c693cf-884f-454a-a2a1-a1f795c38a25.png">  
-수정을 하면 위와 같이 수정된 내용이 게시글에 다시 표시가 된다.
+<img width="400" alt="61" src="https://user-images.githubusercontent.com/89692626/137718441-cb96579f-a46a-4201-90aa-ed579aa468f2.png">
+게시판의 첫 페이지로 게시글 번호는 AUTO INCREMENT되는 게시글의 id로 나타나고 작성자에는 해당 게시글을 작성한 유저의 닉네임이 표시된다.
+<img width="400" alt="62" src="https://user-images.githubusercontent.com/89692626/137718449-2d768a39-72bf-4168-912a-4912b46db76f.png">
+글 작성 버튼을 누르면 넘어가는 페이지로 제목과 내용과 사진을 업로드할 수 있고 제출버튼을 누르면 게시글이 DB에 저장되어 board게시판에 보여진다.
+<img width="400" alt="63" src="https://user-images.githubusercontent.com/89692626/137718456-fb72d3c2-3d5a-43f0-b5aa-508ba4a759d7.png">
+방금 작성한 게시글이 닉네임과 함께 등록된 모습이다.
+<img width="400" alt="64" src="https://user-images.githubusercontent.com/89692626/137718457-02edc0c9-5f7f-4db9-a3ad-d6562be1a375.png">
+게시글의 제목을 누르면 해당 글을 더 자세히 볼 수 있는데 조회수는 해당 페이지로 렌더링되기 전에 게시글의 viewcount가 1 올라간다.
+<img width="368" alt="55" src="https://user-images.githubusercontent.com/89692626/137724837-d882c490-206e-4b66-b4b6-3b303fa00707.png">
+자기가 쓴 글에는 유저Nick과 해당 게시글의 Nick이 같기 때문에 수정과 삭제 버튼이 생긴다. 삭제를 하게 되면 DB에서 해당글이 사라진다.
+<img width="400" alt="65" src="https://user-images.githubusercontent.com/89692626/137718460-66a12fda-10f2-46c0-81b3-5f248780e6d4.png">
+수정을 하면 제목과 내용은 value를 가져와서 그대로 뜬 상태에서 글을 수정할 수 있게 되어있고 위와 같이 수정이 된다.
+<img width="400" alt="66" src="https://user-images.githubusercontent.com/89692626/137718461-a7c693cf-884f-454a-a2a1-a1f795c38a25.png">
+수정을 하면 위와 같이 수정된 내용이 게시글에 다시 표시가 된다. -->
 
-### DB구조 (ERD)
+<!-- ### DB구조 (ERD)
 
-![KakaoTalk_Photo_2021-10-17-15-22-45](https://user-images.githubusercontent.com/88940298/137614327-8508ccda-6572-4a70-af91-d1f9063c4a60.jpeg)
+![KakaoTalk_Photo_2021-10-17-15-22-45](https://user-images.githubusercontent.com/88940298/137614327-8508ccda-6572-4a70-af91-d1f9063c4a60.jpeg) -->
 
-### 프로젝트 기획안 PPT
+<!-- ### 프로젝트 기획안 PPT
 
-[구글 프레젠테이션 파일](https://docs.google.com/presentation/d/1OXVmXrEVzpxmP-WIhmVdoelkYk0yFbY2/edit?usp=sharing&ouid=116791032032435384891&rtpof=true&sd=true)
+[구글 프레젠테이션 파일](https://docs.google.com/presentation/d/1OXVmXrEVzpxmP-WIhmVdoelkYk0yFbY2/edit?usp=sharing&ouid=116791032032435384891&rtpof=true&sd=true) -->
 
-# 시연 영상
+<!-- # 시연 영상
 
-[유튜브첫페이지 전반적인 틀,index 영상](https://www.youtube.com/watch?v=FMPbevKqxzo)  
-[유튜브시연영상1](https://www.youtube.com/watch?v=tTzy22FIxdk)  
-[유튜브시연영상2](https://www.youtube.com/watch?v=OSPGKf2z3MY)
+[유튜브첫페이지 전반적인 틀,index 영상](https://www.youtube.com/watch?v=FMPbevKqxzo)
+[유튜브시연영상1](https://www.youtube.com/watch?v=tTzy22FIxdk)
+[유튜브시연영상2](https://www.youtube.com/watch?v=OSPGKf2z3MY) -->
