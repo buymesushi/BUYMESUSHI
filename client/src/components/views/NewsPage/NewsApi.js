@@ -47,7 +47,7 @@ function NewsApi({ sliders }) {
   useEffect(() => {
     const getArticles = async () => {
       const res = await Axios.get(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=55ee2d88a6d74797b9d1dead15f2b8d5"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=cc514f8e1710411a829a0dabe7b6e626"
       );
       setArticles(res.data.articles);
     };
