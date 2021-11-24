@@ -178,7 +178,7 @@ Member.
 
 # 발생한 이슈 & 해결 방법
 
-### "Nodejs 처리에서의 문제점 파악 ,db및 구조설계 - 이소윤 "
+### "Nodejs 처리에서의 문제점 파악 ,db및 구조설계 - ## 이소윤 "
 
 -   리덕스,id값 전송 시 수량 값 추가하기
 
@@ -201,7 +201,7 @@ Member.
 id는 숫자 string값이라 {productId:id}로 객체값으로 묶어 보냈다. 마찬가지로 현재 유저의
 아이디에 해당하고, 요청한 productId와 동일하면 Spull을 통해 삭제하도록 했다.
 
-### "react 이해 부족 - 최현석 "
+### "react 이해 부족 - ## 최현석 "
 
 -   상태관리 useState useEffect redux
 
@@ -235,7 +235,7 @@ id는 숫자 string값이라 {productId:id}로 객체값으로 묶어 보냈다.
 
 [해결] render 밖에서 if문 사용 또는 삼항연산자 사용
 
-### "proxy 연결 - 최현석"
+### "proxy 연결 - ## 최현석"
 
 -   route 연결 proxy
 
@@ -245,7 +245,7 @@ id는 숫자 string값이라 {productId:id}로 객체값으로 묶어 보냈다.
 
 [해결] client와 server 연결 시 RESTful API 지켜줘야함
 
-### "React 활용 미숙 - 이성재"
+### "React 활용 미숙 - ## 이성재"
 
 -   모듈 활용 미숙, 커스터마이징 방식
 
