@@ -1,6 +1,6 @@
 # 프로젝트팀명 : BUYMESUSHI
 
-## 🌡🌏BUYMESUSHI('회사조') - 탄소 감축을 위한 인증 SNS 플랫폼
+## 🌡🌏 BUYMESUSHI('회사조') - 탄소 감축을 위한 인증 SNS 플랫폼
 
 ## 프로젝트 시작일 : 2021-11-05
 
@@ -63,22 +63,20 @@ Member.
 -   **기존 서비스와의 차별점**
 
     -   커뮤니티 서비스 제공
-    -   경제적 유인으로 환경보호에 동참하게끔 하는 인증 SNS 플랫폼
+    -   경제적 유인을 통해 환경보호에 동참하게끔 하는 인증 SNS 플랫폼
 
 ### 전체 소스 코드 [소스](https://github.com/buymesushi/BUYMESUSHI.git)
 
 ### 사용한 기술
 
--   웹 화면 구성 : `HTML5` `CSS3` `React` `JavaScript` `Styled-Component`
--   검색 결과 데이터 요청 및 출력 : `Ajax` `JSON` `axios`
+-   웹 화면 구성 : `React` `CSS` `styled-components` `JavaScript XML`
+-   데이터 요청 및 출력 : `Ajax` `JSON` `axios`
 -   DB 액션 처리 : `Mongoose`
 -   DBMS : `MongoDB`
--   개발 Tool :` PostMan``Visual Studio Code `
+-   개발 Tool : `Visual Studio Code` `PostMan`
 -   날씨 Api : `openweathermap API`
--   프레임워크 : `NodeJs`
--   프로젝트 관리 Tool : `Google Drive` `GitHub`
-
--------------------------------------------------------------------여기까지------------------------------------------------------------------------
+-   프레임워크 : `Express` `NodeJs`
+-   프로젝트 관리 Tool : `GitHub` `Google Drive`
 
 -   사용 모듈(server) :  
     "bcrypt": "^5.0.1",  
@@ -259,6 +257,8 @@ Member.
 
 # AWS 활용(EC2, RDS)
 
+------------------ 미정 ---------------------
+
 <img width="500" alt="34" src="https://user-images.githubusercontent.com/89692626/137617870-177cb2d9-854b-423a-b04d-3bf45de24ae9.png">     
 <img width="1000" alt="35" src="https://user-images.githubusercontent.com/89692626/137617902-f1bfc9b5-8462-4300-9365-4bd45017b2f3.png">    
 <img width="1000" alt="36" src="https://user-images.githubusercontent.com/89692626/137617905-318f133b-24b3-48ee-800d-3e491d550487.png">
@@ -280,9 +280,39 @@ AWS의 EC2를 활용하여 배포를 하였습니다
 
 # 상세 설명
 
-전체 코드 : [코드](https://github.com/3eteam/3eteamproject)
+전체 코드 : [코드](https://github.com/buymesushi/BUYMESUSHI.git)
 
     - 폴더 설명
+    BUYMESUSHI
+    |
+    |--node_modules         - 모듈
+    |--client               - 클라이언트
+    |   |--node_modules     - 모듈
+    |   |--public
+    |   |   |--img
+    |   |--src
+    |   |   |--actions
+    |   |   |--components
+    |   |   |   |--views
+    |   |   |--hoc
+    |   |   |--reducers
+    |   |   |--redux
+    |   |--App.js
+    |   |--setupProxy.js
+    |
+    |--server
+        |--config
+        |--controller
+        |--data
+        |--middleware
+        |--models
+        |--routes
+        |
+        |--index.js
+
+
+
+
     views : html(Nunjucks)
     video : video files(front 영상)
     vendor : cdn파일(scss, jQuery 모음)
