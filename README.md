@@ -20,7 +20,7 @@ p.s. 현재 서버를 닫은 관계로 실행이 되지 않습니다
 Member. 
 
 
-이성재:[깃허브](https://github.com/seongjae-Leee)
+이성재:[깃허브](https://github.com/seongjae-Leee)   
 최현석:[깃허브](https://github.com/Hyerin1208)  
 김혜린:[깃허브](https://github.com/Tozinoo)  
 이소윤:[깃허브](https://github.com/jsoyun)  
@@ -75,7 +75,6 @@ Member.
 
 - **기존 서비스와의 차별점**
 
-   - 소켓 I.O 를 활용한 실시간 채팅
    - 커뮤니티 서비스 제공
    - 자체 할인율 적용 결제서비스 연동(솔루션)
    
@@ -85,12 +84,11 @@ Member.
 
 ### 사용한 기술
 
-- 웹 화면 구성 : `HTML5` `CSS3` `React` `JavaScript` `Scss` `Styled-Component`
+- 웹 화면 구성 : `HTML5` `CSS3` `React` `JavaScript` `Styled-Component`
 - 검색 결과 데이터 요청 및 출력 : `Ajax` `JSON` `axios`
 - DB 액션 처리 : `Mongoose`
 - DBMS : `MongoDB`
-- 개발 Tool :`PostMan``Visual Studio Code` `Atom`
-- AWS 배포 : `EC2`
+- 개발 Tool :`PostMan``Visual Studio Code`
 - 날씨 Api : `openweathermap API`
 - 프레임워크 : `NodeJs`
 - 프로젝트 관리 Tool : `Google Drive` `GitHub`  
@@ -101,39 +99,92 @@ Member.
 
 
 
-- 사용 모듈(v) : ` "axios": "^0.22.0",
-                "bcrypt": "^5.0.1",
-                "bootpay-js": "^3.3.3",
-                "cookie-parser": "^1.4.5",
-                "dotenv": "^10.0.0",
-                "express": "^4.17.1",
-                "express-session": "^1.17.2",
-                "moment": "^2.29.1",
-                "morgan": "^1.10.0",
-                "multer": "^1.4.3",
-                "mysql": "^2.18.1",
-                "mysql2": "^2.3.0",
-                "nodemon": "^2.0.13",
-                "nunjucks": "^3.2.3",
-                "passport": "^0.5.0",
-                "passport-kakao": "^1.0.1",
-                "passport-local": "^1.0.0",
-                "sequelize": "^6.6.5",
-                "sequelize-cli": "^6.2.0",
-                "socket.io": "^4.2.0"`
+- 사용 모듈(server) : "bcrypt": "^5.0.1",
+        "body-parser": "^1.19.0",
+        "concurrently": "^6.3.0",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "faker": "^5.5.3",
+        "fs": "^0.0.1-security",
+        "jsonwebtoken": "^8.5.1",
+        "jwt-decode": "^3.1.2",
+        "jwt-token": "^1.0.9",
+        "mongo-seeding": "^3.7.0",
+        "mongoose": "^6.0.12",
+        "mongoose-auto-increment": "^5.0.1",
+        "mongoose-sequence": "^5.3.1",
+        "multer": "^1.4.3",
+        "path": "^0.12.7"  
+        
+- 사용 모듈(client) :     "@ckeditor/ckeditor5-build-classic": "^31.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.3",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
+    "@mui/styled-engine-sc": "^5.0.4",
+    "@mui/styles": "^5.1.0",
+    "@nivo/core": "^0.74.0",
+    "@nivo/line": "^0.74.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0",
+    "@toast-ui/editor-plugin-color-syntax": "^3.0.2",
+    "@toast-ui/react-editor": "^3.1.1",
+    "axios": "^0.24.0",
+    "bulma": "^0.9.3",
+    "chart.js": "^3.6.0",
+    "eslint-plugin-import": "^2.25.2",
+    "formik": "^2.2.9",
+    "http-proxy-middleware": "^2.0.1",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "mobx": "^6.3.7",
+    "mobx-persist": "^0.4.1",
+    "mobx-react": "^7.2.1",
+    "mobx-react-form": "^3.2.0",
+    "moment": "^2.29.1",
+    "observer": "0.0.2",
+    "prismjs": "^1.25.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-chartjs-2": "^3.2.0",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.18.1",
+    "react-icons": "^4.3.1",
+    "react-modal": "^3.14.3",
+    "react-pretty-carousel": "^1.0.19",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "react-scroll": "^1.8.4",
+    "react-scroll-slider": "^1.0.1",
+    "react-slick": "^0.28.1",
+    "react-spring": "^9.3.0",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.4.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.3",
+    "swiper": "^7.2.0",
+    "web-vitals": "^1.0.1",
+    "webpack": "4.44.2",
+    "yup": "^0.32.11"
+        
 ### 주요 기능
 
-- 로그인 : 일반 로그인, 카카오 로그인 `Sequelize``passport``mysql`
-- 회원가입 : `Sequelize` `passport``mysql`
-- 회원정보변경 :`Sequelize``mysql`
-- 장바구니 : `Sequelize``mysql`
-- 결제 : `Sequelize` `passport``Bootpay`
-- 마이페이지 : `Sequelize``mysql`
-- 게시판 :`Sequelize``mysql`
-- 1:1 채팅 : 관리자 대화 `gitpull(api)`
-- 실시간채팅:`socket.io``rg.rok`
-- 검색 :`Sequelize``mysql`
-- 관리자모드(상품등록 및 삭제) : `Sequelize``mysql`
+- 로그인 : 일반 로그인, `mongoose` `JWT` `redux` `mongodb`
+- 회원가입 : `mongodb` `nodeJS`
+- 회원정보변경 :`mongoose` `mongodb`
+- 장바구니 : `mongoose` `mongodb`
+- 마이페이지 : `mongoose` `mongodb`
+- 게시판 : `mongoose` `mongodb`  
 
 
 
