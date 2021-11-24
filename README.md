@@ -26,7 +26,7 @@ Member.
 
 [2.목적](#목적)
 
--   기존 서비스와의 차별점
+- 기존 서비스와의 차별점
 
 [3.전체 소스 코드](#전체-소스-코드-click)
 
@@ -38,11 +38,11 @@ Member.
 
 [7.상세 설명](#상세-설명)
 
--   DB 구조 (ERD)
+- DB 구조 (ERD)
 
--   전체 흐름도
+- 전체 흐름도
 
--   프로젝트 설명 PPT
+- 프로젝트 설명 PPT
 
 [8.참여인원](#참여-인원-4명)
 
@@ -60,96 +60,96 @@ Member.
 > 2. 프로젝트 경험
 > 3. 블록체인 기반 암호화폐로 대체될 포인트제도 숙달
 
--   **기존 서비스와의 차별점**
+- **기존 서비스와의 차별점**
 
-    -   커뮤니티 서비스 제공
-    -   경제적 유인을 통해 환경보호에 동참하게끔 하는 인증 SNS 플랫폼
+  - 커뮤니티 서비스 제공
+  - 경제적 유인을 통해 환경보호에 동참하게끔 하는 인증 SNS 플랫폼
 
 ### 전체 소스 코드 [소스](https://github.com/buymesushi/BUYMESUSHI.git)
 
 ### 사용한 기술
 
--   웹 화면 구성 : `React` `CSS` `styled-components` `JavaScript XML`
--   데이터 요청 및 출력 : `Ajax` `JSON` `axios`
--   DB 액션 처리 : `Mongoose`
--   DBMS : `MongoDB`
--   개발 Tool : `Visual Studio Code` `PostMan`
--   날씨 Api : `openweathermap API`
--   프레임워크 : `Express` `NodeJs`
--   프로젝트 관리 Tool : `GitHub` `Google Drive`
+- 웹 화면 구성 : `React` `CSS` `styled-components` `JavaScript XML`
+- 데이터 요청 및 출력 : `Ajax` `JSON` `axios`
+- DB 액션 처리 : `Mongoose`
+- DBMS : `MongoDB`
+- 개발 Tool : `Visual Studio Code` `PostMan`
+- 날씨 Api : `openweathermap API`
+- 프레임워크 : `Express` `NodeJs`
+- 프로젝트 관리 Tool : `GitHub` `Google Drive`
 
--   사용 모듈(server) :  
-    "bcrypt": "^5.0.1",  
-    "body-parser": "^1.19.0",  
-    "concurrently": "^6.3.0",  
-    "cookie-parser": "^1.4.5",  
-    "cors": "^2.8.5",  
-    "express": "^4.17.1",  
-    "fs": "^0.0.1-security",  
-    "jsonwebtoken": "^8.5.1",  
-    "jwt-decode": "^3.1.2",  
-    "jwt-token": "^1.0.9",  
-    "mongo-seeding": "^3.7.0",  
-    "mongoose": "^6.0.12",  
-    "mongoose-sequence": "^5.3.1",  
-    "multer": "^1.4.3",  
-    "path": "^0.12.7"
+- 사용 모듈(server) :  
+  "bcrypt": "^5.0.1",  
+  "body-parser": "^1.19.0",  
+  "concurrently": "^6.3.0",  
+  "cookie-parser": "^1.4.5",  
+  "cors": "^2.8.5",  
+  "express": "^4.17.1",  
+  "fs": "^0.0.1-security",  
+  "jsonwebtoken": "^8.5.1",  
+  "jwt-decode": "^3.1.2",  
+  "jwt-token": "^1.0.9",  
+  "mongo-seeding": "^3.7.0",  
+  "mongoose": "^6.0.12",  
+  "mongoose-sequence": "^5.3.1",  
+  "multer": "^1.4.3",  
+  "path": "^0.12.7"
 
--   사용 모듈(client) :  
-    "@material-ui  
-    "@mui  
-    "@nivo/core": "^0.74.0",  
-    "@nivo/line": "^0.74.0",  
-    "@testing-library  
-    "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0",  
-    "@toast-ui/editor-plugin-color-syntax": "^3.0.2",  
-    "@toast-ui/react-editor": "^3.1.1",  
-    "axios": "^0.24.0",  
-    "bulma": "^0.9.3",  
-    "chart.js": "^3.6.0",  
-    "eslint-plugin-import": "^2.25.2",  
-    "http-proxy-middleware": "^2.0.1",  
-    "mobx": "^6.3.7",  
-    "moment": "^2.29.1",  
-    "observer": "0.0.2",  
-    "prismjs": "^1.25.0",  
-    "prop-types": "^15.7.2",  
-    "react": "^17.0.2",  
-    "react-chartjs-2": "^3.2.0",  
-    "react-modal": "^3.14.3",  
-    "react-pretty-carousel": "^1.0.19",  
-    "react-redux": "^7.2.6",  
-    "react-router-dom": "^5.3.0",  
-    "react-slick": "^0.28.1",  
-    "react-spring": "^9.3.0",  
-    "redux": "^4.1.2",  
-    "redux-promise": "^0.6.0",  
-    "redux-thunk": "^2.4.0",  
-    "slick-carousel": "^1.8.1",  
-    "styled-components": "^5.3.3",  
-    "swiper": "^7.2.0",  
-    "web-vitals": "^1.0.1",  
-    "webpack": "4.44.2",
+- 사용 모듈(client) :  
+  "@material-ui  
+  "@mui  
+  "@nivo/core": "^0.74.0",  
+  "@nivo/line": "^0.74.0",  
+  "@testing-library  
+  "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0",  
+  "@toast-ui/editor-plugin-color-syntax": "^3.0.2",  
+  "@toast-ui/react-editor": "^3.1.1",  
+  "axios": "^0.24.0",  
+  "bulma": "^0.9.3",  
+  "chart.js": "^3.6.0",  
+  "eslint-plugin-import": "^2.25.2",  
+  "http-proxy-middleware": "^2.0.1",  
+  "mobx": "^6.3.7",  
+  "moment": "^2.29.1",  
+  "observer": "0.0.2",  
+  "prismjs": "^1.25.0",  
+  "prop-types": "^15.7.2",  
+  "react": "^17.0.2",  
+  "react-chartjs-2": "^3.2.0",  
+  "react-modal": "^3.14.3",  
+  "react-pretty-carousel": "^1.0.19",  
+  "react-redux": "^7.2.6",  
+  "react-router-dom": "^5.3.0",  
+  "react-slick": "^0.28.1",  
+  "react-spring": "^9.3.0",  
+  "redux": "^4.1.2",  
+  "redux-promise": "^0.6.0",  
+  "redux-thunk": "^2.4.0",  
+  "slick-carousel": "^1.8.1",  
+  "styled-components": "^5.3.3",  
+  "swiper": "^7.2.0",  
+  "web-vitals": "^1.0.1",  
+  "webpack": "4.44.2",
 
 ### 주요 기능
 
 ------------------자기가 맡은 부분 적기--------------------------
 
--   메인페이지 : `MUI` `styled-components` `modal` `react-slick` `API` `chartjs`
--   로그인 : 일반 로그인, `mongoose` `JWT` `redux` `Token` `bcrypt`
--   회원가입 : `mongoose` `nodeJS` `bcrypt` `validation`
--   소개 : `MUI` `styled-components` `react-scroll` `react-scroll-slider` `Custom Hook`
--   지키미인증 : `mongoose` `multer` `redux` `axios`
--   포인트사용 : `mongoose` `redux` `axios`
--   미니게임 : `Vanilla JS`
--   게시판 : `mongoose` `express` `axios` `modal`
--   마이페이지 : `mongoose` `redux` `axios`
+- 메인페이지 : `MUI` `styled-components` `modal` `react-slick` `API` `chartjs`
+- 로그인 : 일반 로그인, `mongoose` `JWT` `redux` `Token` `bcrypt`
+- 회원가입 : `mongoose` `nodeJS` `bcrypt` `validation`
+- 소개 : `MUI` `styled-components` `react-scroll` `react-scroll-slider` `Custom Hook`
+- 지키미인증 : `mongoose` `multer` `redux` `axios`
+- 포인트사용 : `mongoose` `redux` `axios`
+- 미니게임 : `Vanilla JS`
+- 게시판 : `mongoose` `express` `axios` `modal`
+- 마이페이지 : `mongoose` `redux` `axios`
 
 # 발생한 이슈 & 해결 방법
 
 ### "Nodejs 처리에서의 문제점 파악 ,db및 구조설계 "
 
--   리덕스,id값 전송 시 수량 값 추가하기
+- 리덕스,id값 전송 시 수량 값 추가하기
 
 [상황] 미숙한 redux 사용으로 기존 스토어를 통한 상태값과 함수 주입에 어려움을 겪었다.
 
@@ -160,7 +160,17 @@ Member.
 하였다. 기존 data에 수량까지 추가해 mypage라우터로 axios.put으로 넘겨주었다.
 마이페이지 라우터에서 현재 유저의 아이디에 해당하면 정해진 db설정에 맞게 $push해 주었다.
 
--   상태관리 useState useEffect redux
+- 객체값으로 묶어보낸 값을 updateOne와 $pull을 사용해 삭제하기
+
+[상황] 장바구니에 추가한 상품들을 선택해 삭제하려고 하였다.
+
+[문제] 삭제가 되지 않거나 하나의 상품만 선택하여도 모든 products 값이 삭제되었다.
+
+[해결] 선택한 상품만 삭제되도록 선택한 상품의 id를 axious.post로 먼저 보내주었다.
+id는 숫자 string값이라 {productId:id}로 객체값으로 묶어 보냈다. 마찬가지로 현재 유저의
+아이디에 해당하고, 요청한 productId와 동일하면 Spull을 통해 삭제하도록 했다.
+
+- 상태관리 useState useEffect redux
 
 [상황] 초반 redux 사용(user). 이후 useState, useEffect 주로 사용
 
@@ -168,7 +178,7 @@ Member.
 
 [해결] if문 사용하여 undefined시 return null, state 값 있을 시 해당 부분 렌더링
 
--   route 연결 proxy
+- route 연결 proxy
 
 [상황] 라우터 연결 시 연결 오류
 
@@ -176,7 +186,7 @@ Member.
 
 [해결] client와 server 연결 시 RESTful API 지켜줘야함
 
--   react if문 사용
+- react if문 사용
 
 [상황] react render 안에서 if문 사용
 
@@ -184,7 +194,7 @@ Member.
 
 [해결] render 밖에서 if문 사용 또는 삼항연산자 사용
 
--   이미지 업로드
+- 이미지 업로드
 
 [상황] 이미지 업로드 시 fakepath 경로 오류
 
@@ -192,50 +202,45 @@ Member.
 
 [해결] URL.createObjectURL 메소드 사용
 
--   몽고디비 seeder 생성
+- 몽고디비 seeder 생성
 
 [상황] 초기 데이터 생성 위하여 seed Data 설정
 
 [문제] 암호생성을 위하여 bcrypt 사용. 해당 데이터 Object(<promise>)로 출력
 
-[해결] 프로젝트 진행을 위하여 암호화 된 문자열 직접 입력 ( 추후 해결 필요 )   
-    
+[해결] 프로젝트 진행을 위하여 암호화 된 문자열 직접 입력 ( 추후 해결 필요 )
+
 ### "React 활용 미숙"
 
--   모듈 활용 미숙, 커스터마이징 방식
+- 모듈 활용 미숙, 커스터마이징 방식
 
-[상황1] 유효성을 검사하는 함수를 만들어 MUI 를 따온 input에 프론트 단에서 어떻게 유효성 검사를 할 수 있을지 고민.  
+[상황1] 유효성을 검사하는 함수를 만들어 MUI 를 따온 input에 프론트 단에서 어떻게 유효성 검사를 할 수 있을지 고민.
 
-[문제] MUI 컴포넌트와 유효성 검사를 합치하는데 boolean 값이 헷갈림  
+[문제] MUI 컴포넌트와 유효성 검사를 합치하는데 boolean 값이 헷갈림
 
-[해결] MUI의 error 시 적용되는 css와 validation 함수를 합쳐 주어진 유효식과 다른 text가 입력되면 MUI에서도 error로 작성되게함  
-    
-  
-[상황2] chart-js 적용하는 방식에서 OpenAPI 자료를 원하는 방식으로 정리해서 x축, y축에 띄워야 함  
-    
-[문제] grenn-gas emission api의 년도별 배출량이 하나의 객체 안에 다 들어가 있음  
-    
-[해결] 증가되는 추세를 보여주기 위해 chart로 보여주고 싶었으므로 하나의 나라의 배출량만을 불러와서 년도별 배출량을 표시.  
-    
-    
--   모달을 활용한 data 주고받기  
-    
-[상황] : 게시글 리스트, 게시글 작성, 상세 게시글을 한 페이지에서 모달만을 활용하여 데이터를 주고 받아야 함  
-    
-[문제] : 각각의 page가 있는 것이 아니어서 cannot post/ boardwrite에러가 뜨는 등 route에서 경로 설정해주는게 혼란스럽고 세부 게시글을 불러오는 방식도 헷갈림  
-    
-[해결] : input마다 value를 주고 route에서 경로만 설정해주면서 post 방식으로 데이터를 전달했고, 상세 게시글에서는 게시글 리스트에서 props로 데이터를 받아옴   
-    
-    
--   개발 과정에서 DB 삭제하면서 일어나는 유저 관련 issue
-    
+[해결] MUI의 error 시 적용되는 css와 validation 함수를 합쳐 주어진 유효식과 다른 text가 입력되면 MUI에서도 error로 작성되게함
+
+[상황2] chart-js 적용하는 방식에서 OpenAPI 자료를 원하는 방식으로 정리해서 x축, y축에 띄워야 함
+
+[문제] grenn-gas emission api의 년도별 배출량이 하나의 객체 안에 다 들어가 있음
+
+[해결] 증가되는 추세를 보여주기 위해 chart로 보여주고 싶었으므로 하나의 나라의 배출량만을 불러와서 년도별 배출량을 표시.
+
+- 모달을 활용한 data 주고받기
+
+[상황] : 게시글 리스트, 게시글 작성, 상세 게시글을 한 페이지에서 모달만을 활용하여 데이터를 주고 받아야 함
+
+[문제] : 각각의 page가 있는 것이 아니어서 cannot post/ boardwrite에러가 뜨는 등 route에서 경로 설정해주는게 혼란스럽고 세부 게시글을 불러오는 방식도 헷갈림
+
+[해결] : input마다 value를 주고 route에서 경로만 설정해주면서 post 방식으로 데이터를 전달했고, 상세 게시글에서는 게시글 리스트에서 props로 데이터를 받아옴
+
+- 개발 과정에서 DB 삭제하면서 일어나는 유저 관련 issue
+
 [상황] : 게시판에서 작성한 유저 nickname 띄우는게 갑자기 안 됨.
-    
+
 [문제] : 유저 DB가 사라지면 게시판에 nickname을 불러올 수가 없어서 게시판이 오류남
-    
+
 [해결] : 소통의 문제였으므로 공유하고 있는 db에 대해 변화를 줄 때는 서로 소통하기로 함.
-    
-    
 
 <!-- # AWS 활용(EC2, RDS)
 
