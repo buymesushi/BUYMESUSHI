@@ -50,7 +50,7 @@ const MyPage = (props) => {
                 });
                 setPostStates(res.data.postsState);
                 return setData(Data.concat(_Data));
-            } catch (error) {}
+            } catch (error) { }
         };
         fetchData();
     }, []);
@@ -142,7 +142,7 @@ const MyPage = (props) => {
                                         </div>{" "}
                                         :{" "}
                                         {getCartSubTotasl() >
-                                        userData1.points ? (
+                                            userData1.points ? (
                                             <h2>포인트 부족</h2>
                                         ) : (
                                             <h2>
