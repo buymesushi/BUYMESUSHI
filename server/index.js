@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser");
 const userRouter = require("./routes/users");
 const authBoardRouter = require("./routes/authBoard");
 const BoardRouter = require("./routes/Board");
+const webmeetingRouter = require("./routes/webmeeting");
 const productRouter = require("./routes/productRoutes");
 const profileRouter = require("./routes/profile");
 const mypageRouter = require("./routes/myPageRoutes");
@@ -43,6 +44,7 @@ app.use("/api/mypage", mypageRouter);
 app.use("/api/users", userRouter);
 app.use("/api/authboard", authBoardRouter);
 app.use("/api/Board", BoardRouter);
+app.use("/api/webmeeting", webmeetingRouter);
 
 app.use("/api/profile", profileRouter);
 app.use("/api/minigame", minigameRouter);

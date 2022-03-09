@@ -9,7 +9,7 @@ function BoardDetail(props) {
     <div className="board">
       <div className="header">
         <div className="wrapper1">
-          <div className="title">UsEarth</div>
+          <div className="title">ㅋㅋ캠퍼스</div>
           <div className="desc">게시판 상세 페이지</div>
         </div>
       </div>

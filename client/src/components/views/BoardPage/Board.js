@@ -122,8 +122,8 @@ function Board() {
       <br />
       <div className="header">
         <div className="wrapper">
-          <div className="title">UsEarth</div>
-          <div className="desc">환경지키미들의 자유로운 글을 적어주세요</div>
+          <div className="title">ㅋㅋ캠퍼스</div>
+          <div className="desc">주저리 주저리</div>
         </div>
       </div>
       <div className="article">

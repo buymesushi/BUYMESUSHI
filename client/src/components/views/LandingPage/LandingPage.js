@@ -8,12 +8,7 @@ import PartnersPage from "../PartnersPage/PartnersPage";
 const LandingPage = (props) => {
   return (
     <div>
-      <SliderPage />
-      <ApiPage />
-      <br />
-      <NewsApi />
-      <br />
-      <PartnersPage />
+      <h1>여기서 시작한다잇!</h1>
     </div>
   );
 };

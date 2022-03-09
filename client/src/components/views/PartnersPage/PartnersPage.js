@@ -108,7 +108,7 @@ const Image3 = styled.img`
 const PartnersPage = () => {
   return (
     <Box>
-      <PartnersHead>UsEarth Partners</PartnersHead>
+      <PartnersHead>ㅋㅋ캠퍼스 Partners</PartnersHead>
       <Hr />
       <Container>
         {PartnersItem.map((item) => (

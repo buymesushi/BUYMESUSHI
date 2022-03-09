@@ -18,7 +18,7 @@ const importDate = async () => {
 
         const authBoards = [
             {
-                authBody: "최씨가 올림",
+                authBody: "성재가 올림",
                 photo: "img/authBoard/abc.jpg",
                 likes: [b],
                 comments: [

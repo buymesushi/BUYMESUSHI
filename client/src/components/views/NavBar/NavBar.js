@@ -54,25 +54,18 @@ const NavBar = (props) => {
                 >
                     <Toolbar>
                         <div>
-                            <Link href="/" sx={{ flexGrow: 3, ml: 17, mr: 2 }}>
-                                <img
-                                    className="navbar-logo"
-                                    src="/img/usEarth.png"
-                                    alt="nada"
-                                />
-                            </Link>
+                            <Typography
+                                variant="h6"
+                                component="div"
+                                sx={{ flexGrow: 3, mr: 30 }}
+                                style={{ marginTop: "7px" }}
+                            >
+                                <h2 className={classes.appbarTitle}>
+                                    ㅋㅋ캠퍼스
+                                </h2>
+                            </Typography>
                         </div>
-                        <Typography
-                            variant="h6"
-                            component="div"
-                            sx={{ flexGrow: 3, mr: 30 }}
-                            style={{ marginTop: "7px" }}
-                        >
-                            <h2 className={classes.appbarTitle}>
-                                us
-                                <span className={classes.colorText}>Earth</span>
-                            </h2>
-                        </Typography>
+
                         <MiddleMenu />
                         <RightMenu />
                     </Toolbar>

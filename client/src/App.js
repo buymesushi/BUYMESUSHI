@@ -27,8 +27,8 @@ function App() {
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
-          <Route exact path="/about" component={Auth(About, null)} />
-          <Route exact path="/authboard" component={Auth(AuthBoard, true)} />
+          {/* <Route exact path="/about" component={Auth(About, null)} />
+          <Route exact path="/authboard" component={Auth(AuthBoard, true)} /> */}
           <Route
             exact path="/product"
             component={Auth(HomeScreen, true)}
@@ -40,11 +40,11 @@ function App() {
           <Route exact path="/mypage" component={Auth(MyPage, true)} />
           <Route exact path="/profile/:id" component={Auth(Profile, true)} />
           <Route exact path="/play" component={Auth(Play, true)} />
-          <Route exact path="/board" component={Auth(Board, null)} />
+          {/* <Route exact path="/board" component={Auth(Board, null)} /> */}
           <Route exact path="/article/:articleId" />
         </Switch>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

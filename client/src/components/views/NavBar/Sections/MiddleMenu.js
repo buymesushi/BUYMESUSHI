@@ -18,21 +18,15 @@ const NavButton = styled(Button)({
 const RightMenu = (props) => {
   return (
     <Navi>
-      <NavButton sx={{ mr: 1 }} href="/about" color="inherit">
+      {/* <NavButton sx={{ mr: 1 }} href="/about" color="inherit">
         소개
+      </NavButton> */}
+      <NavButton sx={{ mr: 1 }} href="/webmeeting" color="inherit">
+        화상회의
       </NavButton>
-      <NavButton sx={{ mr: 1 }} href="/authBoard" color="inherit">
-        지키미인증
-      </NavButton>
-      <NavButton sx={{ mr: 1 }} href="/product" color="inherit">
-        포인트사용
-      </NavButton>
-      <NavButton sx={{ mr: 1 }} href="/play" color="inherit">
-        미니게임
-      </NavButton>
-      <NavButton sx={{ mr: 1 }} href="/board" color="inherit">
+      {/* <NavButton sx={{ mr: 1 }} href="/board" color="inherit">
         게시판
-      </NavButton>
+      </NavButton> */}
     </Navi>
   );
 };

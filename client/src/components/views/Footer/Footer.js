@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="row">
           {/* column 1*/}
           <div className="col">
-            <h4>usEarth</h4>
+            <h4>ㅋㅋ캠퍼스</h4>
             <ul className="list-unstyled">
               <li>02-567-1234</li>
               <li>seoul, Korea</li>
@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="row">
           <br />
           <p className="col-sm">
-            &copy;{new Date().getFullYear()} by usEarth, Inc. All rights
+            &copy;{new Date().getFullYear()} by ㅋㅋ캠퍼스, Inc. All rights
             reserved. | Terms Of Service | Privacy
           </p>
         </div>

@@ -287,7 +287,7 @@ function Copyright(props) {
         >
             {"Copyright © "}
             <Link color="inherit" href="https://mui.com/">
-                UsEarth
+                ㅋㅋ캠퍼스
             </Link>{" "}
             {new Date().getFullYear()}
             {"."}
