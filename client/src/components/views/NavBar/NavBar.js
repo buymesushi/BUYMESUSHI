@@ -50,21 +50,29 @@ const NavBar = (props) => {
             <ElevationScroll {...props}>
                 <AppBar
                     position="fixed"
-                    style={{ background: "#000000", height: "71px" }}
+                    style={{ background: "#82C994", height: "71px" }}
                 >
                     <Toolbar>
                         <div>
-                            <Typography
-                                variant="h6"
-                                component="div"
-                                sx={{ flexGrow: 3, mr: 30 }}
-                                style={{ marginTop: "7px" }}
-                            >
-                                <h2 className={classes.appbarTitle}>
-                                    ㅋㅋ캠퍼스
-                                </h2>
-                            </Typography>
+                            <Link href="/" sx={{ flexGrow: 3, ml: 17, mr: 2 }}>
+                                <img
+                                    className="navbar-logo"
+                                    src="/img/kobe.png"
+                                    alt="nada"
+                                    style={{ height: "60px", width: "80px" }}
+                                />
+                            </Link>
                         </div>
+                        <Typography
+                            variant="h6"
+                            component="div"
+                            sx={{ flexGrow: 3, mr: 30 }}
+                            style={{ marginTop: "7px" }}
+                        >
+                            <h2 className={classes.appbarTitle}>
+                                ㅋㅋ캠퍼스
+                            </h2>
+                        </Typography>
 
                         <MiddleMenu />
                         <RightMenu />

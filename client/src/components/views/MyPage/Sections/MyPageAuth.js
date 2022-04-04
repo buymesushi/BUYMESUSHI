@@ -12,7 +12,7 @@ const MyPageAuth = (props) => {
                     <div className="MyPageAuth-header-title">
                         {props.userData.nickname}
                     </div>
-                    <div className="MyPageAuth-header-states">
+                    {/* <div className="MyPageAuth-header-states">
                         <div className="MyPageAuth-header-state">
                             <span className="MyPageAuth-header-states-qty">
                                 {props.postState.waits}
@@ -31,11 +31,11 @@ const MyPageAuth = (props) => {
                             </span>{" "}
                             거절
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
-            <div className="MyPageAuth-body-container">
+            {/* <div className="MyPageAuth-body-container">
                 {" "}
                 <div className="Profile-body-subtitle">
                     대기중인 인증 게시글
@@ -78,7 +78,7 @@ const MyPageAuth = (props) => {
                             </div>
                         ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

@@ -110,7 +110,7 @@ const MyPage = (props) => {
                         userData={userData1}
                     />
                 </div>
-                <div className="cartscreen">
+                {/* <div className="cartscreen">
                     <div className="cartscreen_left">
                         <div className="cartscreen_right">
                             <div className="cartscreen_info">
@@ -205,7 +205,7 @@ const MyPage = (props) => {
                             ))
                         )}
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     } else {
